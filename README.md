@@ -1,2 +1,2 @@
 # matthewmarsicano.github.io
-My personal website
+My personal website for sharing projects and other cool stuff
