@@ -91,4 +91,5 @@ footer {
 .social-links i:hover {
     color: #007BFF; /* Change color on hover */
     transform: scale(1.2);
+    text-decoration: none; /* Remove the blue underline */
 }
