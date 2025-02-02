@@ -5,23 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Home</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .container {
+            display: flex; /* Aligns items side by side */
+            align-items: center; /* Centers items vertically */
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .headshot {
+            width: 200px; /* Adjust size as needed */
+            height: 200px;
+            border-radius: 50%; /* Makes it a circle */
+            margin-right: 20px; /* Spacing between image and text */
+            object-fit: cover; /* Ensures image fits well */
+            object-position: center 20%;
+            border: 5px solid #ddd; /* Optional border */
+        }
+        .text {
+            flex: 1; /* Allows text to take remaining space */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
+        <h1>Matthew Marsicano's Portfolio</h1>
     </header>
     <nav>
         <a href="index.html">Home</a>
         <a href="resume.html">Resume</a>
         <a href="projects.html">Projects</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="gallery.html">Project Gallery</a>
     </nav>
     <div class="container">
-        <h2>Hello!</h2>
-        <p>Welcome to my portfolio website. Feel free to explore my resume, projects, and photo gallery.</p>
+        <img src="media/headshot.jpg" alt="Matthew Marsicano Headshot" class="headshot">
+        <div class="text">
+            <h2>Welcome!</h2>
+            <p>Welcome to my portfolio website. Feel free to explore my resume, projects, and photo gallery.</p>
+        </div>
     </div>
-    <footer>
-        &copy; 2024 My Portfolio
-    </footer>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('footer').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
 </body>
 </html>
+
