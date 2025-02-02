@@ -38,20 +38,29 @@
         <a href="gallery.html">Project Gallery</a>
     </nav>
     <div class="container">
-        <img src="media/headshot.jpg" alt="Matthew Marsicano Headshot" class="headshot">
+        <img src="media/Headshot.jpg" alt="Matthew Marsicano Headshot" class="headshot">
         <div class="text">
             <h2>Welcome!</h2>
             <p>Welcome to my portfolio website. Feel free to explore my resume, projects, and photo gallery.</p>
         </div>
     </div>
-    <script>
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector('footer').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading footer:', error));
-    </script>
+    <script src="https://kit.fontawesome.com/750d8f1e62.js" crossorigin="anonymous"></script>
+    <footer>
+        &copy; 2024 My Portfolio
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/matthewmarsicano" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Matthew-Marsicano" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:portfolio@matthewmarsicano.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <p> He</p>
+        </div>
+    </footer>
+    
 </body>
 </html>
 
