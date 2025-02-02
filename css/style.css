@@ -93,3 +93,23 @@ footer {
     transform: scale(1.2);
     text-decoration: none; /* Remove the blue underline */
 }
+
+.headshot-container {
+    display: flex; /* Aligns items side by side */
+    align-items: top; /* Centers items vertically */
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+.headshot {
+    width: 200px; /* Adjust size as needed */
+    height: 200px;
+    border-radius: 50%; /* Makes it a circle */
+    margin-right: 20px; /* Spacing between image and text */
+    object-fit: cover; /* Ensures image fits well */
+    object-position: center 20%;
+    border: 5px solid #ddd; /* Optional border */
+}
+.text {
+    flex: 1; /* Allows text to take remaining space */
+}
