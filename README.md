@@ -1,12 +1,6 @@
 My Personal Website
 =========================
-My site is live at: https://matthew-marsicano.github.io/
+My site is live at: https://matthewmarsicano.com
 
 Please check it out, let me know what you think or reach out about career oppurtunities!
 
-Built with Jekyll
-=========================
-
-Jekyll theme based on [Grayscale bootstrap theme ](http://ironsummitmedia.github.io/startbootstrap-grayscale/)
-
-For more details, read the [documentation](http://jekyllrb.com/)
