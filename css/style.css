@@ -249,3 +249,14 @@ footer {
 .gallery img:hover {
     transform: scale(1.1);    /* Scales the image slightly when hovered */
 }
+
+
+.marginBelow {
+    padding: 10px;
+    margin-bottom: 10px; /* Adds space below */
+}
+  
+.marginAbove {
+    padding: 10px;
+    margin-top: 10px; /* Adds space above */
+}
