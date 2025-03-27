@@ -5,31 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Projects</title>
     <link rel="stylesheet" href="/../css/style.css">
+    <script src="components/nav.js" type="text/javascript" defer></script>
+    <script src="components/footer.js" type="text/javascript" defer></script>
+    <script src="https://kit.fontawesome.com/750d8f1e62.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <h1>Matthew's Software Projects</h1>
     </header>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/resume/">Resume</a>
-        <div class="dropdown">
-            <a href="/experience/" class="dropbtn">Experience</a>
-            <ul class="dropdown-content">
-                <li><a href="/experience/industry/">Industry</a></li>
-                <li><a href="/experience/research/">Research</a></li>
-            </ul>
-        </div>
-        <div class="dropdown">
-            <a href="/projects/" class="dropbtn">Projects</a>
-            <ul class="dropdown-content">
-                <li><a href="/projects/hardware/">Hardware</a></li>
-                <li><a href="/projects/software/">Software</a></li>
-                <li><a href="/projects/classwork/">Classwork</a></li>
-            </ul>
-        </div>
-        <a href="/gallery/">Gallery</a>
-    </nav>
+    <nav-component></nav-component>
     <div class="container">
         <div class="projects-grid">
             <div class="project">
@@ -49,20 +33,6 @@
             </div>
         </div>
     </div>
-    <script src="https://kit.fontawesome.com/750d8f1e62.js" crossorigin="anonymous"></script>
-    <footer>
-        Let's talk! Reach out on:
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/matthewmarsicano" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/Matthew-Marsicano" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="mailto:portfolio@matthewmarsicano.com">
-                <i class="fas fa-envelope"></i>
-            </a>
-        </div>
-    </footer>
+    <footer-component></footer-component>
 </body>
 </html>
