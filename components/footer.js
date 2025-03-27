@@ -6,7 +6,7 @@ class Footer extends HTMLElement {
     connectedCallback() {
       this.innerHTML = `
        <footer>
-        Let's talk! Reach out on:
+        Contact Information:
         <div class="social-links">
             <a href="https://www.linkedin.com/in/matthewmarsicano" target="_blank">
                 <i class="fab fa-linkedin"></i>
