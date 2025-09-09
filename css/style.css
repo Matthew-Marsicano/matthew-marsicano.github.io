@@ -99,10 +99,11 @@ footer {
     text-decoration: none; /* Remove the blue underline */
 }
 
+/* Update headshot container for better layout */
 .headshot-container {
-    display: flex; /* Aligns items side by side */
-    align-items: top; /* Centers items vertically */
-    max-width: 800px;
+    display: flex;
+    align-items: flex-start;
+    max-width: 1200px; /* Increase from 800px */
     margin: 20px auto;
     padding: 20px;
 }
@@ -306,12 +307,6 @@ footer {
 .certification strong {
     font-weight: bold;
 }
-.bio-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    line-height: 1.6;
-}
 
 .bio-content p {
     margin-bottom: 20px;
@@ -322,11 +317,25 @@ footer {
     margin-top: 30px;
     margin-bottom: 15px;
 }
+/* Remove max-width constraint from bio-content */
+.bio-content {
+    flex: 1;
+    margin: 0;
+    padding: 0 0 0 20px; /* Only left padding */
+    line-height: 1.6;
+}
 
-.bio-content highlight {
+/* Fix for highlight boxes */
+.bio-content .highlight {
     background-color: #f0f8ff;
     padding: 15px;
     border-left: 4px solid #007acc;
     margin: 20px 0;
     border-radius: 5px;
+    display: block;
 }
+
+
+
+
+
