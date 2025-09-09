@@ -260,3 +260,49 @@ footer {
     padding: 10px;
     margin-top: 10px; /* Adds space above */
 }
+
+/* Certification Styles */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.certification {
+    text-align: left;
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex; /* Use flexbox for image and details */
+    align-items: center; /* Vertically align items */
+}
+
+.cert-image {
+    width: 150px; /* Adjust as needed */
+    margin-right: 20px;
+}
+
+.cert-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px; /* Add border radius to images */
+}
+
+.cert-details {
+    flex-grow: 1; /* Allow details to take remaining space */
+}
+
+.certification h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.certification p {
+    margin-bottom: 10px;
+}
+
+certification strong {
+    font-weight: bold;
+}

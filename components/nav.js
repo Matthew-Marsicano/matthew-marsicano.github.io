@@ -23,7 +23,7 @@ class NavBar extends HTMLElement {
                 <li><a href="/projects/classwork/">Classwork</a></li>
             </ul>
         </div>
-        <a href="/gallery/">Certifications</a>
+        <a href="/certifications/">Certifications</a>
         <a href="/gallery/">Gallery</a>
         </nav> 
     `;
