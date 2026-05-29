@@ -16,39 +16,147 @@
 
     <nav-component></nav-component>
 
-    <div class="headshot-container">
-        <img src="/media/Headshot.JPG" alt="Matthew Marsicano Headshot" class="headshot">
-        <div class="bio-content">
-            <h2>Hello, I'm Matthew Marsicano</h2>
-            
-            <h3>About Me</h3>
-            <p>I am an Electrical Engineering student at Northeastern University with a passion for ASIC design and silicon engineering, particularly in mixed-signal hardware applications. With a 3.98 GPA and expected graduation in May 2027, I have distinguished myself as an emerging talent in custom silicon development for next-generation consumer products.</p>
+    <!-- ── Hero ── -->
+    <section class="hero">
+        <img src="/media/Headshot.JPG" alt="Matthew Marsicano" class="hero-headshot">
+        <div class="hero-text">
+            <h2>Hello, I'm Matthew</h2>
+            <p class="hero-subtitle">Electrical Engineering @ Northeastern University · Class of 2027</p>
+            <p class="hero-meta">3.98 GPA · Silicon Engineering · PCB Design · RF and Mixed-Signal Systems</p>
+        </div>
+    </section>
 
-            <h3>My Technical Expertise</h3>
-            <p>My expertise spans silicon design from system-level architecture through layout and verification, utilizing industry-standard tools including Cadence Virtuoso, Magic VLSI, and SKY130 PDK. My hands-on experience includes designing a 40-100MHz PLL ASIC with full schematic capture, layout, and verification through DRC/LVS checks and parasitic simulations. My technical proficiency extends to System Verilog, UVM testbenches, and FPGA implementation, demonstrated through projects like my 16-QAM baseband modulator with comprehensive I/Q imbalance and phase noise analysis.</p>
+    <!-- ── Areas of Interest ── -->
+    <section class="container">
+        <h2 class="section-title">Areas of Interest</h2>
+        <p class="section-subtitle">Roles I'm targeting for my engineering career</p>
 
-            <h3>My Professional Experience</h3>
-            <p>My professional experience reflects my commitment to advancing silicon solutions across diverse applications. At Nokia Bell Labs, I optimized FPGA power consumption by modifying Verilog code for PLL, clock generation, and buffer circuits for backscatter radio systems, while designing 2 PCBs integrating RF, logic analyzer, and power circuits. My automation work reduced testbench PCB bring-up time from 20 minutes to 2 minutes across 300+ devices.</p>
-            
-            <p>My work at Draper Labs involves testing analog ASICs for power performance and radiation hardness, while my previous role at DEKA Research strengthened my embedded systems expertise with cellular modem architectures and boot optimization.</p>
+        <div class="interest-grid">
 
-            <h3>My Areas of Interest</h3>
-            <p>My particular interest lies in custom silicon for consumer products, low-power wearables, and telecommunications technologies. This focus drives my involvement in cutting-edge projects, from AR headset development with real-time sensor fusion to manufacturing automation systems for international deployment. My leadership role in Northeastern's Generate Product Development Studio showcases my ability to translate silicon-level innovations into market-ready products.</p>
-
-            <h3>My Recognition & Achievements</h3>
-            <p>Recognition of my potential includes selection as one of only 10 Northeastern students for Apple's Next-gen Innovators program for Hardware Engineers, highlighting my promise in consumer electronics silicon design. My second-place finish at MIT's iQuHack quantum computing hackathon demonstrates my versatility in emerging technologies.</p>
-            
-            <div class="highlight">
-                <p><strong>Future Impact:</strong> Through my combination of theoretical knowledge, practical experience, and industry mentorship, I am positioned to contribute meaningfully to the future of mixed-signal ASIC design, particularly in applications that demand ultra-low power consumption and high integration for next-generation consumer and telecommunications products.</p>
+            <div class="interest-card">
+                <div class="interest-icon"><i class="fas fa-microchip"></i></div>
+                <h3>Analog / Mixed-Signal IC Design</h3>
+                <ul class="interest-list">
+                    <li>Validated WiFi 7 transceiver DACs &amp; ADCs</li>
+                    <li>Whole-chip QAM and noise-isolation performance</li>
+                </ul>
             </div>
 
-            <div class="highlight">
-                <p><strong>Currently Seeking:</strong> Spring 2026 Co-ops and Summer 2026 internships involving FPGA & ASIC Verification and Development.</p>
+            <div class="interest-card">
+                <div class="interest-icon"><i class="fas fa-rocket"></i></div>
+                <h3>Product Development</h3>
+                <ul class="interest-list">
+                    <li>Generate Product Development Studio — Tech Lead, Chief Engineer</li>
+                    <li>Forge EE Product Workshop Lead</li>
+                    <li>Forge Silicon Director — Summer 2026 &rarr; Spring 2027</li>
+                </ul>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon"><i class="fas fa-satellite-dish"></i></div>
+                <h3>Wireless Systems</h3>
+                <ul class="interest-list">
+                    <li>Cellular modem channel-bonding hashing algorithm &amp; real-time-robotics VPN data-pipeline evaluation</li>
+                    <li>GPS receiver validation for Space Force handoff (Draper Labs)</li>
+                    <li>15-channel backscatter tag programming &amp; validation testbench &mdash; RF equipment, custom PCB, MCU, FPGA, MATLAB</li>
+                    <li>WiFi-7 chip evaluation at MediaTek</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── Work Experience Timeline ── -->
+    <section class="container">
+        <h2 class="section-title">Work Experience</h2>
+        <p class="section-subtitle">My professional journey</p>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-period">Summer 2024</div>
+                <div class="timeline-card">
+                    <img src="/media/deka_logo.png" alt="DEKA R&D" class="timeline-logo">
+                    <div class="timeline-content">
+                        <h3>DEKA R&amp;D</h3>
+                        <p>Embedded Software Engineering Intern</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-period">Spring 2025</div>
+                <div class="timeline-card">
+                    <img src="/media/bell_labs_logo.png" alt="Nokia Bell Labs" class="timeline-logo">
+                    <div class="timeline-content">
+                        <h3>Nokia Bell Labs</h3>
+                        <p>Backscatter RF Engineer Co-op</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-period">Summer 2025</div>
+                <div class="timeline-card">
+                    <div class="timeline-logo-placeholder">D</div>
+                    <div class="timeline-content">
+                        <h3>Draper Labs</h3>
+                        <p>Systems Engineer Intern</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-period">Spring 2026</div>
+                <div class="timeline-card">
+                    <div class="timeline-logo-placeholder">M</div>
+                    <div class="timeline-content">
+                        <h3>MediaTek</h3>
+                        <p>Analog / Mixed-Signal IC Evaluation Intern</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-period">Summer 2026</div>
+                <div class="timeline-card">
+                    <div class="timeline-logo-placeholder">G</div>
+                    <div class="timeline-content">
+                        <h3>Google</h3>
+                        <p>Hardware Engineer Intern</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── What's Next ── -->
+    <section class="container">
+        <div class="whats-next">
+            <h2>What's Next?</h2>
+            <p class="whats-next-tagline">Looking ahead to the next chapter</p>
+            <div class="next-grid">
+                <div class="next-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>EE Masters Programs</h3>
+                    <p>Applying Fall 2026</p>
+                </div>
+                <div class="next-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Full-Time Engineering</h3>
+                    <p>Seeking opportunities</p>
+                </div>
             </div>
         </div>
-    </div>
-    
+    </section>
+
     <footer-component></footer-component>
-    
+
 </body>
 </html>
