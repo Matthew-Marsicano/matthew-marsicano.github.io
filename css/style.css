@@ -317,6 +317,23 @@ nav a:hover {
   transform: translateY(-5px);
 }
 
+.project-icon {
+  width: 120px;
+  height: 120px;
+  margin: 40px auto;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-accent);
+  box-shadow: 0 4px 22px rgba(79,172,254,0.28);
+}
+
+.project-icon i {
+  font-size: 3rem;
+  color: #fff;
+}
+
 .projects-grid .project h2 { color: var(--text-primary); }
 .projects-grid .project h3 { color: var(--glow-blue); }
 .projects-grid .project h4 { color: var(--text-muted); font-weight: 500; }

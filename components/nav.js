@@ -16,6 +16,7 @@ class NavBar extends HTMLElement {
         <div class="dropdown">
           <a href="/projects/" class="dropbtn">Projects</a>
           <ul class="dropdown-content">
+            <li><a href="/projects/silicon/">Silicon</a></li>
             <li><a href="/projects/hardware/">Hardware</a></li>
             <li><a href="/projects/software/">Software</a></li>
             <li><a href="/projects/classwork/">Classwork</a></li>
