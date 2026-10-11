@@ -8,7 +8,9 @@
   --glass-bg:        rgba(255, 255, 255, 0.055);
   --glass-bg-hover:  rgba(255, 255, 255, 0.09);
   --glass-border:    rgba(255, 255, 255, 0.10);
-  --glass-blur:      blur(22px) saturate(180%);
+  /* Cards sit on a near-solid background, so blurring behind them is invisible
+     but costs a GPU pass per card on every scroll frame. Nav keeps its blur. */
+  --glass-blur:      none;
 
   --glow-blue:   #4facfe;
   --glow-cyan:   #00f2fe;
@@ -330,7 +332,7 @@ nav a[aria-current] {
   border: 1px solid var(--glass-border);
   padding: 1.5rem;
   border-radius: 22px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
   color: var(--text-primary);
 }
 
@@ -403,7 +405,7 @@ nav a[aria-current] {
   border: 1px solid rgba(255,255,255,0.09);
   border-radius: 14px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.35);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
   filter: brightness(0.88);
 }
 
@@ -483,7 +485,7 @@ footer {
   font-weight: 600;
   border-radius: 999px;
   font-size: 0.9rem;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
   box-shadow: 0 4px 22px rgba(79,172,254,0.28);
 }
 
@@ -503,7 +505,7 @@ footer {
   text-decoration: none;
   margin-bottom: 0;
   box-shadow: 0 4px 22px rgba(79,172,254,0.22);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 .blue-box:hover {
@@ -557,7 +559,7 @@ footer {
   border-radius: 20px;
   display: flex;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
   color: var(--text-primary);
 }
 
@@ -697,7 +699,7 @@ footer {
   border: 1px solid var(--glass-border);
   border-radius: 22px;
   padding: 1.75rem;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
   display: flex;
   flex-direction: column;
 }
@@ -826,7 +828,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 a.timeline-card { text-decoration: none; color: inherit; }
@@ -925,7 +927,7 @@ a.timeline-card { text-decoration: none; color: inherit; }
   background: rgba(255,255,255,0.04);
   border: 1px solid var(--glass-border);
   border-radius: 18px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 .next-card:hover {
@@ -1108,7 +1110,7 @@ a.timeline-card { text-decoration: none; color: inherit; }
   border: 1px solid var(--glass-border);
   border-radius: 22px;
   padding: 1.25rem 1.25rem 1.5rem;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 .feature-card:hover {
@@ -1343,4 +1345,140 @@ main { display: block; position: relative; z-index: 1; }
   font-size: 0.8rem;
   color: var(--text-muted);
   text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════
+   MOTION
+   Only transform, translate, scale, and opacity animate, so it all runs on
+   the compositor. Scroll reveals are CSS scroll-driven animations (no JS);
+   browsers without support just show the content as-is.
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Page-to-page transitions (Chrome, Edge, Safari 18.2+) ── */
+@view-transition { navigation: auto; }
+
+main { view-transition-name: page-main; }
+
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: 180ms; }
+
+::view-transition-old(page-main) { animation: vt-out 150ms ease-in both; }
+::view-transition-new(page-main) { animation: vt-in 340ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+@keyframes vt-out { to   { opacity: 0; transform: translateY(-8px); } }
+@keyframes vt-in  { from { opacity: 0; transform: translateY(16px); } }
+
+/* ── Headshot: rotating gradient ring with a soft glow ── */
+.hero-photo {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  border-radius: 50%;
+  isolation: isolate;
+}
+
+.hero-photo::before,
+.hero-photo::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  z-index: -1;
+  border-radius: 50%;
+  background: conic-gradient(#4facfe, #a18cd1, #fbc2eb, #00f2fe, #4facfe);
+  animation: spin 9s linear infinite;
+}
+
+.hero-photo::after {
+  inset: -12px;
+  filter: blur(20px);
+  opacity: 0.5;
+}
+
+.hero-photo .hero-headshot {
+  display: block;
+  border: 3px solid var(--bg-secondary);
+  box-shadow: none;
+}
+
+@keyframes spin { to { transform: rotate(1turn); } }
+
+/* ── Scroll reveals and the timeline line drawing itself ── */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .section-title,
+    .feature-card,
+    .interest-card,
+    .timeline-item,
+    .next-card,
+    .photo-strip figure,
+    .projects-grid .project,
+    .certification,
+    .gallery figure {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 220px;
+    }
+
+    .timeline { view-timeline-name: --timeline; }
+
+    .timeline::before {
+      transform-origin: top;
+      animation: draw-line linear both;
+      animation-timeline: --timeline;
+      animation-range: entry 15% cover 60%;
+    }
+  }
+}
+
+/* translate and scale are separate from transform, so hover lifts still work */
+@keyframes reveal    { from { opacity: 0; translate: 0 28px; scale: 0.97; } }
+@keyframes draw-line { from { transform: scaleY(0); } }
+
+/* ── Spotlight that follows the pointer across cards (fx.js sets --mx/--my) ── */
+@media (hover: hover) and (pointer: fine) {
+  .feature-card,
+  .interest-card,
+  .projects-grid .project,
+  .certification,
+  .timeline-card,
+  .next-card {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .feature-card::after,
+  .interest-card::after,
+  .projects-grid .project::after,
+  .certification::after,
+  .timeline-card::after,
+  .next-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(79,172,254,0.2), transparent 45%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .feature-card:hover::after,
+  .interest-card:hover::after,
+  .projects-grid .project:hover::after,
+  .certification:hover::after,
+  .timeline-card:hover::after,
+  .next-card:hover::after { opacity: 1; }
+}
+
+/* Skip layout and paint for gallery sections that are offscreen */
+.gallery-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1400px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) { animation: none !important; }
 }

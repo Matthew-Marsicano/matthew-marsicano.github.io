@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <script src="/components/nav.js" defer></script>
     <script src="/components/footer.js" defer></script>
+    <script src="/components/fx.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -52,7 +53,9 @@
 
     <!-- ── Hero ── -->
     <section class="hero">
-        <img src="/media/Headshot.webp" alt="Matthew Marsicano" class="hero-headshot" width="533" height="800" fetchpriority="high">
+        <span class="hero-photo">
+            <img src="/media/Headshot.webp" alt="Matthew Marsicano" class="hero-headshot" width="533" height="800" fetchpriority="high">
+        </span>
         <div class="hero-text">
             <h2>Hello, I'm Matthew</h2>
             <p class="hero-subtitle">Electrical Engineering @ Northeastern University · Class of 2027</p>
@@ -85,7 +88,7 @@
             </article>
 
             <article class="feature-card">
-                <div class="feature-media"><img src="/media/sar_adc_model.webp" alt="SAR ADC model output spectrum showing 49.3 dB SNDR and 7.90 ENOB" width="960" height="1080" loading="lazy" decoding="async" style="object-position: top;"></div>
+                <div class="feature-media"><img src="/media/sar_adc_model.webp" srcset="/media/sar_adc_model-480.webp 480w, /media/sar_adc_model.webp 960w" sizes="(max-width: 700px) 92vw, 260px" alt="SAR ADC model output spectrum showing 49.3 dB SNDR and 7.90 ENOB" width="960" height="1080" loading="lazy" decoding="async" style="object-position: top;"></div>
                 <h3>8-bit SAR ADC</h3>
                 <p class="feature-tag">SKY130 · TinyTapeout analog</p>
                 <p>Differential 8-bit, 1 MS/s SAR with a monotonic-switching cap DAC. Golden model hits 7.9 ENOB. Bootstrapped sampling switch reaches 78 dB SFDR.</p>
@@ -130,19 +133,19 @@
 
         <div class="photo-strip">
             <figure>
-                <a href="/experience/industry/#bell-labs"><img src="/media/bell_labs_testbench.webp" alt="Nokia Bell Labs tag verification testbench" width="957" height="719" loading="lazy" decoding="async"></a>
+                <a href="/experience/industry/#bell-labs"><img src="/media/bell_labs_testbench.webp" srcset="/media/bell_labs_testbench-480.webp 480w, /media/bell_labs_testbench.webp 957w" sizes="(max-width: 700px) 92vw, 280px" alt="Nokia Bell Labs tag verification testbench" width="957" height="719" loading="lazy" decoding="async"></a>
                 <figcaption>Tag verification testbench, Nokia Bell Labs</figcaption>
             </figure>
             <figure>
-                <a href="/projects/hardware/#generate"><img src="/media/gce_control_pcb.webp" alt="GCE Control PCB V1.0, assembled" width="719" height="957" loading="lazy" decoding="async"></a>
+                <a href="/projects/hardware/#generate"><img src="/media/gce_control_pcb.webp" srcset="/media/gce_control_pcb-480.webp 480w, /media/gce_control_pcb.webp 719w" sizes="(max-width: 700px) 92vw, 280px" alt="GCE Control PCB V1.0, assembled" width="719" height="957" loading="lazy" decoding="async"></a>
                 <figcaption>Filter machine control board, Generate</figcaption>
             </figure>
             <figure>
-                <a href="/projects/hardware/#tubender"><img src="/media/tubender_rev1.webp" alt="Assembled Tubender Rev 1.0 main board" width="957" height="719" loading="lazy" decoding="async"></a>
+                <a href="/projects/hardware/#tubender"><img src="/media/tubender_rev1.webp" srcset="/media/tubender_rev1-480.webp 480w, /media/tubender_rev1.webp 957w" sizes="(max-width: 700px) 92vw, 280px" alt="Assembled Tubender Rev 1.0 main board" width="957" height="719" loading="lazy" decoding="async"></a>
                 <figcaption>Tubender Rev 1.0 main board, Generate</figcaption>
             </figure>
             <figure>
-                <a href="/projects/classwork/#xr-hmd"><img src="/media/xr_headset_side.webp" alt="Open-source XR headset in use" width="957" height="719" loading="lazy" decoding="async"></a>
+                <a href="/projects/classwork/#xr-hmd"><img src="/media/xr_headset_side.webp" srcset="/media/xr_headset_side-480.webp 480w, /media/xr_headset_side.webp 957w" sizes="(max-width: 700px) 92vw, 280px" alt="Open-source XR headset in use" width="957" height="719" loading="lazy" decoding="async"></a>
                 <figcaption>Open-source XR headset, Networked XR</figcaption>
             </figure>
         </div>
@@ -228,7 +231,7 @@
                 <div class="timeline-dot"></div>
                 <div class="timeline-period">Summer 2025</div>
                 <a class="timeline-card" href="/experience/industry/#draper">
-                    <img src="/media/draper_logo.webp" alt="Draper" class="timeline-logo" width="52" height="52" loading="lazy">
+                    <img src="/media/draper_logo.webp" srcset="/media/draper_logo-480.webp 480w, /media/draper_logo.webp 1600w" sizes="52px" alt="Draper" class="timeline-logo" width="52" height="52" loading="lazy">
                     <div class="timeline-content">
                         <h3>Draper</h3>
                         <p>Systems Engineering Intern &middot; Cambridge, MA</p>
@@ -240,7 +243,7 @@
                 <div class="timeline-dot"></div>
                 <div class="timeline-period">Spring 2025</div>
                 <a class="timeline-card" href="/experience/industry/#bell-labs">
-                    <img src="/media/bell_labs_logo.webp" alt="Nokia Bell Labs" class="timeline-logo" width="52" height="52" loading="lazy">
+                    <img src="/media/bell_labs_logo.webp" srcset="/media/bell_labs_logo-480.webp 480w, /media/bell_labs_logo.webp 800w" sizes="52px" alt="Nokia Bell Labs" class="timeline-logo" width="52" height="52" loading="lazy">
                     <div class="timeline-content">
                         <h3>Nokia Bell Labs</h3>
                         <p>Backscatter Radio Engineer Co-op &middot; Murray Hill, NJ</p>
