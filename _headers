@@ -1,0 +1,21 @@
+# Cloudflare Pages response headers. GitHub Pages ignores this file.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  X-Frame-Options: SAMEORIGIN
+
+# Images and icons: cache a week, then refresh in the background.
+# Replacing an image? Give it a new filename so nobody sees the old one.
+/media/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/favicon.svg
+  Cache-Control: public, max-age=604800
+
+/apple-touch-icon.png
+  Cache-Control: public, max-age=604800
+
+# HTML, CSS, and JS keep Cloudflare's default (revalidate every visit, cheap
+# 304s from the edge), so a deploy shows up immediately everywhere.
