@@ -3,36 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Software Projects</title>
-    <link rel="stylesheet" href="/../css/style.css">
-    <script src="/components/nav.js" type="text/javascript" defer></script>
-    <script src="/components/footer.js" type="text/javascript" defer></script>
-    <script src="https://kit.fontawesome.com/750d8f1e62.js" crossorigin="anonymous"></script>
+    <title>Software Projects | Matthew Marsicano</title>
+    <meta name="description" content="Software projects: Backscatter Designer interactive RF tool, MIT iQuHack 2024 QuEra challenge 2nd place, and this portfolio site.">
+    <link rel="canonical" href="https://matthewmarsicano.com/projects/software/">
+    <meta name="theme-color" content="#06060f">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Matthew Marsicano">
+    <meta property="og:title" content="Software Projects | Matthew Marsicano">
+    <meta property="og:description" content="Backscatter Designer interactive RF tool, MIT iQuHack 2024 QuEra challenge 2nd place, and this portfolio site.">
+    <meta property="og:url" content="https://matthewmarsicano.com/projects/software/">
+    <meta property="og:image" content="https://matthewmarsicano.com/media/og-card.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header>
         <h1>Matthew's Software Projects</h1>
     </header>
     <nav-component></nav-component>
-    <div class="container">
+    <main id="main" class="container">
         <div class="projects-grid">
-            <div class="project">
-                <img src="/media/iquhack_badge.jpg" alt="MIT">
-                <h2 style="margin: 0;padding: 0;">MIT iQuHack 2024</h2>
-                <h3 style="margin: 0;padding: 0;">2nd Place Team</h3>
-                <h4 style="margin: 0;padding: 0;">Febuary 2024</h4>
-                <p>  • Won2nd place after presenting findings on IoT applications of Bayesian optimization algorithm.</p>
+
+            <div class="project" id="backscatter-designer">
+                <div class="project-icon"><span class="icon i-sliders" aria-hidden="true"></span></div>
+                <h2>Backscatter Designer</h2>
+                <h3>Interactive RF Design Tool</h3>
+                <h4>October 2026</h4>
+                <ul class="bullets">
+                    <li>Browser tool for N-phase backscatter tag design: bistatic link budget, Smith chart load states, image rejection, sideband spectrum with BLE channels marked, and coverage maps.</li>
+                    <li>Loads can be ideal phasors with injected error or arbitrary R + jX per state.</li>
+                    <li>All parameters live in the URL, so a design can be shared as a link. Plain JavaScript and Plotly, no build step.</li>
+                </ul>
+                <div class="card-links">
+                    <a href="/backscatter-radio-viz/" target="_blank" rel="noopener"><span class="icon i-external" aria-hidden="true"></span>Try it</a>
+                    <a href="https://github.com/Matthew-Marsicano/backscatter-radio-viz" target="_blank" rel="noopener"><span class="icon i-github" aria-hidden="true"></span>Code</a>
+                </div>
             </div>
-            <div class="project">
-                <img src="/media/webpage.png" alt="webpage">
-                <h2 style="margin: 0;padding: 0;">Portfolio Website</h2>
-                <h3 style="margin: 0;padding: 0;">Web Developer</h3>
-                <h4 style="margin: 0;padding: 0;">Febuary 2025</h4>
-                <p>  • Utilize HTML and CSS to generate a static website with several subpages and interactive features. <br>
-                    • Hosted on GitHub Pages.</p>
+
+            <div class="project" id="iquhack">
+                <img src="/media/iquhack_badge.webp" alt="MIT iQuHack 2024 badge" width="800" height="800">
+                <h2>MIT iQuHack 2024</h2>
+                <h3>2nd Place, QuEra Challenge</h3>
+                <h4>February 2024</h4>
+                <ul class="bullets">
+                    <li>Team of 5. Mapped the Maximal Independent Set problem on a diluted square lattice onto Rydberg atoms.</li>
+                    <li>Tuned the laser detuning schedule with Nelder-Mead and ran it on QuEra's Aquila neutral-atom quantum computer.</li>
+                    <li>Benchmarked hardware results against classical simulation and a Generic Tensor Network solver. Started a Bayesian optimization approach for the pulse schedule.</li>
+                </ul>
+                <div class="card-links">
+                    <a href="https://github.com/Matthew-Marsicano/2024_QuEra/tree/main/team_solutions/the_qubit_questers" target="_blank" rel="noopener"><span class="icon i-github" aria-hidden="true"></span>Solution</a>
+                    <a href="/media/iquhack_certificate.pdf" target="_blank" rel="noopener"><span class="icon i-external" aria-hidden="true"></span>Certificate</a>
+                </div>
             </div>
+
+            <div class="project" id="website">
+                <a href="/media/webpage.webp"><img src="/media/webpage.webp" alt="Screenshot of this portfolio website" width="700" height="381" loading="lazy"></a>
+                <h2>Portfolio Website</h2>
+                <h3>Web Developer</h3>
+                <h4>February 2025 - Current</h4>
+                <ul class="bullets">
+                    <li>Hand-written HTML and CSS with web components for the shared nav and footer. No framework, no build step.</li>
+                    <li>Hosted on GitHub Pages with a custom domain.</li>
+                </ul>
+                <div class="card-links">
+                    <a href="https://github.com/Matthew-Marsicano/matthew-marsicano.github.io" target="_blank" rel="noopener"><span class="icon i-github" aria-hidden="true"></span>Code</a>
+                </div>
+            </div>
+
         </div>
-    </div>
+    </main>
     <footer-component></footer-component>
 </body>
 </html>

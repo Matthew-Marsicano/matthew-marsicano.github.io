@@ -3,72 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Silicon Projects</title>
-    <link rel="stylesheet" href="/../css/style.css">
-    <script src="/components/nav.js" type="text/javascript" defer></script>
-    <script src="/components/footer.js" type="text/javascript" defer></script>
-    <script src="https://kit.fontawesome.com/750d8f1e62.js" crossorigin="anonymous"></script>
+    <title>Silicon Projects | Matthew Marsicano</title>
+    <meta name="description" content="Chip design projects: FlashNPU inference accelerator RTL, 8-bit SKY130 SAR ADC, BLE backscatter modem TinyTapeout tile, SKY130 PLL, and a 16-QAM FPGA modulator.">
+    <link rel="canonical" href="https://matthewmarsicano.com/projects/silicon/">
+    <meta name="theme-color" content="#06060f">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Matthew Marsicano">
+    <meta property="og:title" content="Silicon Projects | Matthew Marsicano">
+    <meta property="og:description" content="FlashNPU inference accelerator, 8-bit SKY130 SAR ADC, BLE backscatter modem, SKY130 PLL, and a 16-QAM FPGA modulator.">
+    <meta property="og:url" content="https://matthewmarsicano.com/projects/silicon/">
+    <meta property="og:image" content="https://matthewmarsicano.com/media/og-card.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header>
         <h1>Matthew's Silicon Projects</h1>
     </header>
     <nav-component></nav-component>
-    <div class="container">
+    <main id="main" class="container">
         <div class="projects-grid">
-            <div class="project">
-                <div class="project-icon"><i class="fas fa-memory"></i></div>
-                <h2 style="margin: 0;padding: 0;">FlashNPU</h2>
-                <h3 style="margin: 0;padding: 0;">Flash-Streaming Inference Accelerator RTL</h3>
-                <h4 style="margin: 0;padding: 0;">October 2026 - Current</h4>
-                <p> • Designed an on-device neural network accelerator that runs layers straight out of flash with no DRAM.
-                    <br>• Weights stream from 4 striped flash channels into a 32-lane INT4 x INT8 weight-streaming GEMV engine. Activations stay in on-chip SRAM.
-                    <br>• Layer descriptor sequencer, APB register interface, requantize and output pack, perf counters.
-                    <br>• 10/10 regression tests bit-exact against a Python golden model. Verilator -Wall lint clean. ~30k cells in Yosys.
-                </p>
+
+            <div class="project" id="flashnpu">
+                <div class="project-icon"><span class="icon i-memory" aria-hidden="true"></span></div>
+                <h2>FlashNPU</h2>
+                <h3>Flash-Streaming Inference Accelerator RTL</h3>
+                <h4>October 2026 - Current</h4>
+                <ul class="bullets">
+                    <li>Designed an on-device neural network accelerator that runs layers straight out of flash with no DRAM.</li>
+                    <li>Weights stream from 4 striped flash channels into a 32-lane INT4 x INT8 weight-streaming GEMV engine. Activations stay in on-chip SRAM.</li>
+                    <li>Layer descriptor sequencer, APB register interface, requantize and output pack, perf counters.</li>
+                    <li>10/10 regression tests bit-exact against a Python golden model. Verilator -Wall lint clean.</li>
+                    <li>Gate-level SKY130 power: 23.6 mW core logic at 100 MHz, about 7 pJ per INT4 MAC, 0.23 mm&sup2; of standard cells.</li>
+                    <li>Arty A7 FPGA port in progress.</li>
+                </ul>
             </div>
-            <div class="project">
-                <img src="/media/sar_adc_model.png" alt="SAR ADC model results">
-                <h2 style="margin: 0;padding: 0;">8-bit SAR ADC</h2>
-                <h3 style="margin: 0;padding: 0;">SKY130 TinyTapeout Analog Tile</h3>
-                <h4 style="margin: 0;padding: 0;">September 2026 - Current</h4>
-                <p> • Differential 8-bit, 1 MS/s SAR ADC with monotonic-switching cap DAC, top-plate sampling, and a PMOS StrongARM comparator.
-                    <br>• Built a Python golden model with mismatch Monte Carlo, kT/C, and comparator noise. 7.9 ENOB, DNL p99 0.21 LSB.
-                    <br>• Bootstrapped NMOS sampling switch hits 78 dB SFDR in ngspice.
-                    <br>• Redesigning the comparator as a double-tail to cut offset.
-                </p>
+
+            <div class="project" id="sar-adc">
+                <a href="/media/sar_adc_model.webp"><img src="/media/sar_adc_model.webp" alt="SAR ADC model results: output spectrum at 7.90 ENOB, DNL, and INL" width="960" height="1080"></a>
+                <h2>8-bit SAR ADC</h2>
+                <h3>SKY130 TinyTapeout Analog Tile</h3>
+                <h4>September 2026 - Current</h4>
+                <ul class="bullets">
+                    <li>Differential 8-bit, 1 MS/s SAR ADC with monotonic-switching cap DAC, top-plate sampling, and a PMOS StrongARM comparator.</li>
+                    <li>Built a Python golden model with mismatch Monte Carlo, kT/C, and comparator noise. 7.9 ENOB, DNL p99 0.21 LSB.</li>
+                    <li>Bootstrapped NMOS sampling switch hits 78 dB SFDR in ngspice.</li>
+                    <li>Redesigning the comparator as a double-tail to cut offset.</li>
+                </ul>
             </div>
-            <div class="project">
-                <div class="project-icon"><i class="fas fa-broadcast-tower"></i></div>
-                <h2 style="margin: 0;padding: 0;">BLE Backscatter Modem</h2>
-                <h3 style="margin: 0;padding: 0;">SKY130 TinyTapeout Digital Tile</h3>
-                <h4 style="margin: 0;padding: 0;">July 2026</h4>
-                <p> • Digital baseband and RF switch controller for a BLE advertising-channel backscatter tag.
-                    <br>• Builds the BLE PDU on the fly (preamble, access address, CRC-24, whitening) with no full-packet buffer. SPI host interface and streaming payload FIFO.
-                    <br>• Drives a 4-phase SSB or 2-phase DSB switch pattern, selectable at runtime.
-                    <br>• 11 cocotb tests bit-exact against a Python golden model. Full P&amp;R in a 1x2 tile at 64 MHz with +3.08 ns setup slack and 0 DRC/LVS errors.
-                </p>
+
+            <div class="project" id="ble-modem">
+                <div class="project-icon"><span class="icon i-tower" aria-hidden="true"></span></div>
+                <h2>BLE Backscatter Modem</h2>
+                <h3>SKY130 TinyTapeout Digital Tile</h3>
+                <h4>July 2026</h4>
+                <ul class="bullets">
+                    <li>Digital baseband and RF switch controller for a BLE advertising-channel backscatter tag.</li>
+                    <li>Builds the BLE PDU on the fly (preamble, access address, CRC-24, whitening) with no full-packet buffer. SPI host interface and streaming payload FIFO.</li>
+                    <li>Drives a 4-phase SSB or 2-phase DSB switch pattern, selectable at runtime.</li>
+                    <li>11 cocotb tests bit-exact against a Python golden model. Full P&amp;R in a 1x2 tile at 64 MHz with +3.08 ns setup slack and 0 DRC/LVS errors.</li>
+                </ul>
+                <div class="card-links">
+                    <a href="https://github.com/Matthew-Marsicano/Backscatter_RF_Switch_Driver" target="_blank" rel="noopener"><span class="icon i-github" aria-hidden="true"></span>Code</a>
+                    <a href="/backscatter-radio-viz/" target="_blank" rel="noopener"><span class="icon i-external" aria-hidden="true"></span>Link budget tool</a>
+                </div>
             </div>
-            <div class="project">
-                <div class="project-icon"><i class="fas fa-wave-square"></i></div>
-                <h2 style="margin: 0;padding: 0;">PLL ASIC</h2>
-                <h3 style="margin: 0;padding: 0;">SKY130 Custom Schematic &amp; Layout</h3>
-                <h4 style="margin: 0;padding: 0;">May 2025 - August 2025</h4>
-                <p> • Designed a 40-100 MHz PLL using the SKY130 PDK with custom schematic and layout.
-                    <br>• Verified through DRC/LVS and parasitic extraction using ngspice, Xschem, Magic VLSI, and KLayout.
-                </p>
+
+            <div class="project" id="pll">
+                <div class="project-icon"><span class="icon i-wave" aria-hidden="true"></span></div>
+                <h2>PLL ASIC</h2>
+                <h3>SKY130 Custom Schematic &amp; Layout</h3>
+                <h4>May 2025 - August 2025</h4>
+                <ul class="bullets">
+                    <li>Designed a 40-100 MHz PLL using the SKY130 PDK with custom schematic and layout.</li>
+                    <li>Verified through DRC/LVS and parasitic extraction using ngspice, Xschem, Magic VLSI, and KLayout.</li>
+                </ul>
             </div>
-            <div class="project">
-                <div class="project-icon"><i class="fas fa-project-diagram"></i></div>
-                <h2 style="margin: 0;padding: 0;">16-QAM I/Q Modulator</h2>
-                <h3 style="margin: 0;padding: 0;">FPGA, SystemVerilog</h3>
-                <h4 style="margin: 0;padding: 0;">May 2025 - August 2025</h4>
-                <p> • Implemented a 16-QAM baseband modulator on a Xilinx FPGA in SystemVerilog.
-                    <br>• Verified with a UVM testbench.
-                </p>
+
+            <div class="project" id="qam">
+                <div class="project-icon"><span class="icon i-diagram" aria-hidden="true"></span></div>
+                <h2>16-QAM I/Q Modulator</h2>
+                <h3>FPGA, SystemVerilog</h3>
+                <h4>May 2025 - August 2025</h4>
+                <ul class="bullets">
+                    <li>Implemented a 16-QAM baseband modulator on a Xilinx FPGA in SystemVerilog.</li>
+                    <li>Verified with a UVM testbench.</li>
+                </ul>
             </div>
+
         </div>
-    </div>
+    </main>
     <footer-component></footer-component>
 </body>
 </html>

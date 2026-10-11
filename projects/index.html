@@ -3,93 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Projects</title>
-    <link rel="stylesheet" href="/../css/style.css">
-    <script src="/components/nav.js" type="text/javascript" defer></script>
-    <script src="/components/footer.js" type="text/javascript" defer></script>
-    <script src="https://kit.fontawesome.com/750d8f1e62.js" crossorigin="anonymous"></script>
+    <title>Projects | Matthew Marsicano</title>
+    <meta name="description" content="Silicon, hardware, software, and classwork projects: FlashNPU, SKY130 SAR ADC, BLE backscatter modem, BEACON wearable, Backscatter Designer, and more.">
+    <link rel="canonical" href="https://matthewmarsicano.com/projects/">
+    <meta name="theme-color" content="#06060f">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Matthew Marsicano">
+    <meta property="og:title" content="Projects | Matthew Marsicano">
+    <meta property="og:description" content="FlashNPU, SKY130 SAR ADC, BLE backscatter modem, BEACON wearable, Backscatter Designer, and more.">
+    <meta property="og:url" content="https://matthewmarsicano.com/projects/">
+    <meta property="og:image" content="https://matthewmarsicano.com/media/og-card.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header>
         <h1>Matthew's Projects</h1>
     </header>
     <nav-component></nav-component>
-    <div class="container">
+    <main id="main" class="container">
         <div class="projects-grid">
 
             <div class="project">
                 <a href="/projects/silicon/" class="blue-box">
-                    <h1>Silicon</h1>
+                    <h2>Silicon</h2>
                 </a>
                 <hr class="separator">
-                <div class="project-icon"><i class="fas fa-memory"></i></div>
-                <h2 style="margin: 0;padding: 0;">FlashNPU</h2>
-                <h3 style="margin: 0;padding: 0;">Flash-Streaming Inference Accelerator RTL</h3>
-                <h4 style="margin: 0;padding: 0;">October 2026 - Current</h4>
+                <div class="project-icon"><span class="icon i-memory" aria-hidden="true"></span></div>
+                <h2>FlashNPU</h2>
+                <h3>Flash-Streaming Inference Accelerator RTL</h3>
+                <h4>October 2026 - Current</h4>
                 <hr class="separator">
-                <img src="/media/sar_adc_model.png" alt="SAR ADC">
-                <h2 style="margin: 0;padding: 0;">8-bit SAR ADC</h2>
-                <h3 style="margin: 0;padding: 0;">SKY130 TinyTapeout Analog Tile</h3>
-                <h4 style="margin: 0;padding: 0;">September 2026 - Current</h4>
+                <img src="/media/sar_adc_model.webp" alt="SAR ADC model results" width="960" height="1080" loading="lazy">
+                <h2>8-bit SAR ADC</h2>
+                <h3>SKY130 TinyTapeout Analog Tile</h3>
+                <h4>September 2026 - Current</h4>
                 <hr class="separator">
-                <div class="project-icon"><i class="fas fa-broadcast-tower"></i></div>
-                <h2 style="margin: 0;padding: 0;">BLE Backscatter Modem</h2>
-                <h3 style="margin: 0;padding: 0;">SKY130 TinyTapeout Digital Tile</h3>
-                <h4 style="margin: 0;padding: 0;">July 2026</h4>
+                <div class="project-icon"><span class="icon i-tower" aria-hidden="true"></span></div>
+                <h2>BLE Backscatter Modem</h2>
+                <h3>SKY130 TinyTapeout Digital Tile</h3>
+                <h4>July 2026</h4>
             </div>
+
             <div class="project">
                 <a href="/projects/hardware/" class="blue-box">
-                    <h1>Hardware</h1>
+                    <h2>Hardware</h2>
                 </a>
                 <hr class="separator">
-                <img src="/media/generate_logo.png" alt="Generate">
-                <h2 style="margin: 0;padding: 0;">Generate: Product Development</h2>
-                <h3 style="margin: 0;padding: 0;">Principal Electrical Engineer</h3>
-                <h4 style="margin: 0;padding: 0;">July 2025 - Current</h4>
+                <div class="project-icon"><span class="icon i-heart" aria-hidden="true"></span></div>
+                <h2>BEACON</h2>
+                <h3>Backscatter Wearable, Senior Capstone</h3>
+                <h4>August 2026 - Current</h4>
                 <hr class="separator">
-                <img src="/media/forge_logo.png" alt="Forge">
-                <h2 style="margin: 0;padding: 0;">Forge Silicon Design</h2>
-                <h3 style="margin: 0;padding: 0;">Founder &amp; Director</h3>
-                <h4 style="margin: 0;padding: 0;">June 2026 - Current</h4>
+                <img src="/media/generate_logo.webp" alt="Generate" width="379" height="392" loading="lazy">
+                <h2>Generate: Product Development</h2>
+                <h3>Principal Electrical Engineer</h3>
+                <h4>July 2025 - Current</h4>
                 <hr class="separator">
-                <img src="/media/northeastern_logo.png" alt="Northeastern Makerspace">
-                <h2 style="margin: 0;padding: 0;">Northeastern Makerspace</h2>
-                <h3 style="margin: 0;padding: 0;">Electronics Team Lead</h3>
-                <h4 style="margin: 0;padding: 0;">May 2025 - May 2026</h4>
+                <img src="/media/forge_logo.webp" alt="Forge" width="336" height="353" loading="lazy">
+                <h2>Forge Silicon Design</h2>
+                <h3>Founder &amp; Director</h3>
+                <h4>June 2026 - Current</h4>
+                <hr class="separator">
+                <img src="/media/northeastern_logo.webp" alt="Northeastern University" width="1600" height="900" loading="lazy">
+                <h2>Northeastern Makerspace</h2>
+                <h3>Electronics Team Lead</h3>
+                <h4>May 2025 - May 2026</h4>
+                <hr class="separator">
+                <img src="/media/pneumatic_actuator.webp" alt="Pneumatic drone gripper prototype" width="719" height="957" loading="lazy">
+                <h2>Pneumatic Drone Gripper</h2>
+                <h3>Founder, NURobotics Team</h3>
+                <h4>NURobotics &middot; Northeastern University</h4>
             </div>
-            <div class="project">
-                <a href="/projects/classwork/" class="blue-box">
-                    <h1>Classwork</h1>
-                </a> 
-                <hr class="separator">
-                <img src="/media/spider.jpeg" alt="spider">
-                <h2 style="margin: 0;padding: 0;">Embedded Design</h2>
-                <h3 style="margin: 0;padding: 0;">FPGA Controlled Spider Robot</h3>
-                <h4 style="margin: 0;padding: 0;">September 2024 - December 2024</h4>
-                <hr class="separator">
-                <img src="/media/ecg_project.jpg" alt="ecg">
-                <h2 style="margin: 0;padding: 0;">Circuits & Signals: Biomedical Applications</h2>
-                <h3 style="margin: 0;padding: 0;">ECG Sampling, Filtering, and Analysis</h3>
-                <h4 style="margin: 0;padding: 0;">September 2024 - December 2024</h4>
-            </div>
+
             <div class="project">
                 <a href="/projects/software/" class="blue-box">
-                    <h1>Software</h1>
-                </a> 
+                    <h2>Software</h2>
+                </a>
                 <hr class="separator">
-                <img src="/media/iquhack_badge.jpg" alt="MIT">
-                <h2 style="margin: 0;padding: 0;">MIT iQuHack 2024</h2>
-                <h3 style="margin: 0;padding: 0;">2nd Place Team</h3>
-                <h4 style="margin: 0;padding: 0;">Febuary 2024</h4>
+                <div class="project-icon"><span class="icon i-sliders" aria-hidden="true"></span></div>
+                <h2>Backscatter Designer</h2>
+                <h3>Interactive RF Design Tool</h3>
+                <h4>October 2026</h4>
                 <hr class="separator">
-                <img src="/media/webpage.png" alt="webpage">
-                <h2 style="margin: 0;padding: 0;">Portfolio Website</h2>
-                <h3 style="margin: 0;padding: 0;">Web Developer</h3>
-                <h4 style="margin: 0;padding: 0;">Febuary 2025</h4>
+                <img src="/media/iquhack_badge.webp" alt="MIT iQuHack badge" width="800" height="800" loading="lazy">
+                <h2>MIT iQuHack 2024</h2>
+                <h3>2nd Place, QuEra Challenge</h3>
+                <h4>February 2024</h4>
+                <hr class="separator">
+                <img src="/media/webpage.webp" alt="Portfolio website screenshot" width="700" height="381" loading="lazy">
+                <h2>Portfolio Website</h2>
+                <h3>Web Developer</h3>
+                <h4>February 2025 - Current</h4>
             </div>
-            
+
+            <div class="project">
+                <a href="/projects/classwork/" class="blue-box">
+                    <h2>Classwork</h2>
+                </a>
+                <hr class="separator">
+                <img src="/media/xr_headset_front.webp" alt="Open-source XR headset in use" width="719" height="957" loading="lazy">
+                <h2>Networked XR Systems</h2>
+                <h3>Open-Source XR Headset</h3>
+                <h4>Fall 2024</h4>
+                <hr class="separator">
+                <img src="/media/spider.webp" alt="FPGA-controlled spider robot" width="530" height="800" loading="lazy">
+                <h2>Embedded Design</h2>
+                <h3>FPGA Controlled Spider Robot</h3>
+                <h4>September 2024 - December 2024</h4>
+                <hr class="separator">
+                <img src="/media/ecg_project.webp" alt="ECG project" width="800" height="401" loading="lazy">
+                <h2>Circuits &amp; Signals: Biomedical Applications</h2>
+                <h3>ECG Sampling, Filtering, and Analysis</h3>
+                <h4>September 2024 - December 2024</h4>
+            </div>
+
         </div>
-    </div>
+    </main>
     <footer-component></footer-component>
 </body>
 </html>

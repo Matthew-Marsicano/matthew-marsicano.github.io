@@ -3,74 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Hardware Projects</title>
-    <link rel="stylesheet" href="/../css/style.css">
-    <script src="/components/nav.js" type="text/javascript" defer></script>
-    <script src="/components/footer.js" type="text/javascript" defer></script>
-    <script src="https://kit.fontawesome.com/750d8f1e62.js" crossorigin="anonymous"></script>
+    <title>Hardware Projects | Matthew Marsicano</title>
+    <meta name="description" content="Hardware and leadership: BEACON backscatter wearable capstone, Generate Product Development Studio, Forge Silicon Design, NURobotics pneumatic drone gripper, Northeastern Makerspace, and PCB designs.">
+    <link rel="canonical" href="https://matthewmarsicano.com/projects/hardware/">
+    <meta name="theme-color" content="#06060f">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Matthew Marsicano">
+    <meta property="og:title" content="Hardware Projects | Matthew Marsicano">
+    <meta property="og:description" content="BEACON backscatter wearable, Generate Product Development Studio, Forge Silicon Design, Northeastern Makerspace, and PCB designs.">
+    <meta property="og:url" content="https://matthewmarsicano.com/projects/hardware/">
+    <meta property="og:image" content="https://matthewmarsicano.com/media/og-card.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header>
         <h1>Matthew's Hardware Projects</h1>
     </header>
     <nav-component></nav-component>
-    <div class="container">
+    <main id="main" class="container">
         <div class="projects-grid">
-            <div class="project">
-                <img src="/media/generate_logo.png" alt="Generate">
-                <h2 style="margin: 0;padding: 0;">Generate: Product Development</h2>
-                <h3 style="margin: 0;padding: 0;">Principal Electrical Engineer</h3>
-                <h4 style="margin: 0;padding: 0;">July 2025 - Current</h4>
-                <p> • Lead 100+ engineers across 8 client projects, owning trade-offs in RF TX, power, and robotic actuators. <br>
-                    • Lead Chief Engineers across all hardware product development disciplines: Electrical, Firmware, Mechanical, and Industrial Design. <br>
-                    • Provide Electrical Engineering mentorship, education, and design feedback to an organization of ~40 ECEs. <br>
-                    • Led a team of 5 engineers designing electrical systems and firmware for an air filter assembly machine, balancing a $2,600 budget across power, control, actuators, sensors, and UI while managing requirements with an international client based in Taiwan.</p>
+
+            <div class="project" id="beacon">
+                <div class="project-icon"><span class="icon i-heart" aria-hidden="true"></span></div>
+                <h2>BEACON</h2>
+                <h3>Backscatter Wearable, Senior Capstone</h3>
+                <h4>August 2026 - Current</h4>
+                <ul class="bullets">
+                    <li>Battery-free heart rate wearable. A phone module sends a 2.4 GHz carrier and the tag reflects it as a BLE-compatible single-sideband signal that an unmodified BLE receiver can decode.</li>
+                    <li>The tag harvests energy from the same carrier instead of running a radio off a battery.</li>
+                    <li>Designing the SSB modulator: an SP4T RF switch with three reflect loads at 0/120/240&deg; plus a harvester throw, targeting 20 dB image rejection.</li>
+                    <li>Optimized load networks from vendor S-parameters reach about 30 dB image rejection across the band in simulation.</li>
+                </ul>
+                <div class="card-links">
+                    <a href="/backscatter-radio-viz/" target="_blank" rel="noopener"><span class="icon i-external" aria-hidden="true"></span>Link budget tool</a>
+                </div>
             </div>
-            <div class="project">
-                <img src="/media/generate_logo.png" alt="Generate">
-                <h2 style="margin: 0;padding: 0;">Generate: Product Development</h2>
-                <h3 style="margin: 0;padding: 0;">Hardware Engineer</h3>
-                <h4 style="margin: 0;padding: 0;">September 2024 - December 2024</h4>
-                <p> • Designed KiCAD schematics and PCB layouts for the display and UI of a tube bending CNC. <br>
-                    • Programmed display UI state machine and automated sensor interrupts to ensure reliable functionality.</p>
+
+            <div class="project" id="generate">
+                <a href="/media/gce_control_pcb.webp"><img src="/media/gce_control_pcb.webp" alt="GCE Control PCB V1.0, assembled, for the Generate air filter machine" width="719" height="957"></a>
+                <h2>Generate: Product Development</h2>
+                <h3>Principal Electrical Engineer</h3>
+                <h4>July 2025 - Current</h4>
+                <ul class="bullets">
+                    <li>Lead 100+ engineers across 8 client projects, owning trade-offs in RF TX, power, and robotic actuators.</li>
+                    <li>Lead Chief Engineers across all hardware product development disciplines: Electrical, Firmware, Mechanical, and Industrial Design.</li>
+                    <li>Provide Electrical Engineering mentorship, education, and design feedback to an organization of ~40 ECEs.</li>
+                    <li>Led a team of 5 engineers designing electrical systems and firmware for an air filter assembly machine, balancing a $2,600 budget across power, control, actuators, sensors, and UI while managing requirements with an international client based in Taiwan.</li>
+                </ul>
+                <div class="card-links">
+                    <a href="https://github.com/Matthew-Marsicano/FL25_Generate_GCE_Scripts" target="_blank" rel="noopener"><span class="icon i-github" aria-hidden="true"></span>Filter machine code</a>
+                </div>
+                <div class="project-figures">
+                    <a href="/media/gce_power_board.webp"><img src="/media/gce_power_board.webp" alt="GCE power board with 24V input and two regulators" width="719" height="957" loading="lazy"></a>
+                    <a href="/media/cyclone_programmer.webp"><img src="/media/cyclone_programmer.webp" alt="PE Micro Cyclone programmer flashing an NXP board" width="719" height="957" loading="lazy"></a>
+                </div>
             </div>
-            <div class="project">
-                <img src="/media/forge_logo.png" alt="Forge">
-                <h2 style="margin: 0;padding: 0;">Forge Silicon Design</h2>
-                <h3 style="margin: 0;padding: 0;">Founder &amp; Director</h3>
-                <h4 style="margin: 0;padding: 0;">June 2026 - Current</h4>
-                <p> • Founded Northeastern's first chip design student organization, blending silicon with entrepreneurship.</p>
+
+            <div class="project" id="tubender">
+                <a href="/media/tubender_rev1.webp"><img src="/media/tubender_rev1.webp" alt="Assembled Tubender Rev 1.0 main board" width="957" height="719" loading="lazy"></a>
+                <h2>Generate: Product Development</h2>
+                <h3>Hardware Engineer, Tube Bending CNC</h3>
+                <h4>September 2024 - December 2024</h4>
+                <ul class="bullets">
+                    <li>Designed KiCad schematics and PCB layouts for the display and UI of a tube bending CNC.</li>
+                    <li>Programmed the display UI state machine and automated sensor interrupts for reliable operation.</li>
+                </ul>
+                <div class="project-figures">
+                    <a href="/media/tubender_display_proto.webp"><img src="/media/tubender_display_proto.webp" alt="Tubender display prototype: RA8875 TFT driver on a breadboard" width="719" height="957" loading="lazy"></a>
+                    <a href="/media/tubender_ui_pcb.webp"><img src="/media/tubender_ui_pcb.webp" alt="Tubender UI board KiCad 3D render" width="900" height="480" loading="lazy"></a>
+                    <a href="/media/tubender_schematic.webp"><img src="/media/tubender_schematic.webp" alt="Tubender display and UI schematic" width="512" height="357" loading="lazy"></a>
+                    <a href="/media/tubender_screen_map.webp"><img src="/media/tubender_screen_map.webp" alt="Tubender UI screen flow from menu to bend in progress" width="647" height="900" loading="lazy"></a>
+                </div>
             </div>
-            <div class="project">
-                <img src="/media/forge_logo.png" alt="Forge">
-                <h2 style="margin: 0;padding: 0;">Forge: Product Development</h2>
-                <h3 style="margin: 0;padding: 0;">Electrical Engineering Specialist</h3>
-                <h4 style="margin: 0;padding: 0;">August 2024 - December 2024</h4>
-                <p>  • Leads hour-long workshops on circuits, soldering, and software for 3 Product Development teams. <br>
-                    • Provides tailored feedback on designs, circuits, Arduino Software, and electromechanical integration.</p>
+
+            <div class="project" id="forge">
+                <img src="/media/forge_logo.webp" alt="Forge" width="336" height="353" loading="lazy">
+                <h2>Forge Silicon Design</h2>
+                <h3>Founder &amp; Director</h3>
+                <h4>June 2026 - Current</h4>
+                <ul class="bullets">
+                    <li>Founded Northeastern's first chip design student organization, blending silicon with entrepreneurship.</li>
+                </ul>
             </div>
+
             <div class="project">
-                <img src="/media/northeastern_logo.png" alt="Northeastern Makerspace">
-                <h2 style="margin: 0;padding: 0;">Northeastern Makerspace</h2>
-                <h3 style="margin: 0;padding: 0;">Electronics Team Lead</h3>
-                <h4 style="margin: 0;padding: 0;">May 2025 - May 2026</h4>
-                <p> • Led a team supporting 200+ students with technical trainings, equipment purchasing, and operations. <br>
-                    • Managed and maintained soldering and electronics lab equipment to ensure functionality. <br>
-                    • Developed training resources and guides for equipment and electrical components. <br>
-                    • Enhanced makerspace accessibility and layout based on user feedback.</p>
+                <img src="/media/forge_logo.webp" alt="Forge" width="336" height="353" loading="lazy">
+                <h2>Forge: Product Development</h2>
+                <h3>Electrical Engineering Specialist</h3>
+                <h4>August 2024 - December 2024</h4>
+                <ul class="bullets">
+                    <li>Led hour-long workshops on circuits, soldering, and software for 3 product development teams.</li>
+                    <li>Gave tailored feedback on designs, circuits, Arduino software, and electromechanical integration.</li>
+                </ul>
             </div>
+
+            <div class="project" id="makerspace">
+                <img src="/media/northeastern_logo.webp" alt="Northeastern University" width="1600" height="900" loading="lazy">
+                <h2>Northeastern Makerspace</h2>
+                <h3>Electronics Team Lead</h3>
+                <h4>May 2025 - May 2026</h4>
+                <ul class="bullets">
+                    <li>Led a team supporting 200+ students with technical trainings, equipment purchasing, and operations.</li>
+                    <li>Managed and maintained soldering and electronics lab equipment.</li>
+                    <li>Developed training resources and guides for equipment and electrical components.</li>
+                    <li>Improved makerspace accessibility and layout based on user feedback.</li>
+                </ul>
+                <div class="project-figures">
+                    <a href="/media/sherm_electronics.webp"><img src="/media/sherm_electronics.webp" alt="Makerspace electronics bench with soldering stations, oscilloscope, and parts bins" width="800" height="601" loading="lazy"></a>
+                </div>
+            </div>
+
+            <div class="project" id="drone-gripper">
+                <a href="/media/pneumatic_actuator.webp"><img src="/media/pneumatic_actuator.webp" alt="Pneumatic gripper prototype: air pump, valves, silicone gripper, and control breadboard" width="719" height="957" loading="lazy"></a>
+                <h2>Pneumatic Drone Gripper</h2>
+                <h3>Founder, NURobotics Team</h3>
+                <h4>NURobotics &middot; Northeastern University</h4>
+                <ul class="bullets">
+                    <li>Founded a NURobotics team to build a pneumatic soft gripper as a drone attachment.</li>
+                    <li>Team modeled and cast the silicone gripper.</li>
+                    <li>Designed the motor control hardware and firmware for the air pump and valves.</li>
+                    <li>Designed the control PCB.</li>
+                </ul>
+            </div>
+
+            <div class="project" id="buck">
+                <a href="/media/buck_top.webp"><img src="/media/buck_top.webp" alt="12V to 5V buck converter PCB 3D render" width="1029" height="450" loading="lazy"></a>
+                <h2>12V to 5V Buck Converter</h2>
+                <h3>Personal PCB</h3>
+                <h4>March 2025</h4>
+                <ul class="bullets">
+                    <li>Designed buck converter circuitry to step down 12V supplied by a single 23A battery.</li>
+                    <li>Specced components for 2A maximum current draw and high efficiency.</li>
+                </ul>
+            </div>
+
         </div>
-        <div class="marginAbove"></div>
-        <div class="projects-grid">
-            <div class="project">
-                <img src="/media/buck_top.png" alt="Buck Convertor PCB">
-                <h2 style="margin: 0;padding: 0;">12V to 5V Buck Converter</h2>
-                <h4 style="margin: 0;padding: 0;"> March 2025</h4>
-                <p>  • Designed buck converter circuitry to step down 12V supplied by a single 23A battery. <br>
-                    • Specced components for 2A maximum current draw and high efficiency.</p>
-            </div>
-        </div>
-    </div>
+    </main>
     <footer-component></footer-component>
 </body>
 </html>

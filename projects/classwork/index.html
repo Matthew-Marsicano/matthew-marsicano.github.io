@@ -3,37 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Classwork Projects</title>
-    <link rel="stylesheet" href="/../css/style.css">
-    <script src="/components/nav.js" type="text/javascript" defer></script>
-    <script src="/components/footer.js" type="text/javascript" defer></script>
-    <script src="https://kit.fontawesome.com/750d8f1e62.js" crossorigin="anonymous"></script>
+    <title>Classwork Projects | Matthew Marsicano</title>
+    <meta name="description" content="Northeastern course projects: open-source XR headset, FPGA-controlled spider robot, and ECG sampling and filtering.">
+    <link rel="canonical" href="https://matthewmarsicano.com/projects/classwork/">
+    <meta name="theme-color" content="#06060f">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Matthew Marsicano">
+    <meta property="og:title" content="Classwork Projects | Matthew Marsicano">
+    <meta property="og:description" content="Open-source XR headset, FPGA-controlled spider robot, and ECG sampling and filtering.">
+    <meta property="og:url" content="https://matthewmarsicano.com/projects/classwork/">
+    <meta property="og:image" content="https://matthewmarsicano.com/media/og-card.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header>
         <h1>Matthew's Classwork Projects</h1>
     </header>
     <nav-component></nav-component>
-    <div class="container">
+    <main id="main" class="container">
         <div class="projects-grid">
-            <div class="project">
-                <img src="/media/spider.jpeg" alt="spider">
-                <h2 style="margin: 0;padding: 0;">Embedded Design</h2>
-                <h3 style="margin: 0;padding: 0;">FPGA Controlled Spider Robot</h3>
-                <h4 style="margin: 0;padding: 0;">September 2024 - December 2024</h4>
-                <p> • Programmed Altera DE1-SoC in Quartus to generate PWM signals for servo control. <br>
-                    • Designed movement control logic in C++.</p>
+
+            <div class="project" id="xr-hmd">
+                <a href="/media/xr_headset_front.webp"><img src="/media/xr_headset_front.webp" alt="Testing the open-source XR headset with the camera feed on a wall display" width="719" height="957"></a>
+                <h2>Networked XR Systems</h2>
+                <h3>Open-Source XR Headset</h3>
+                <h4>Fall 2024</h4>
+                <ul class="bullets">
+                    <li>Built an open, low-cost head-mounted display with Tyler Myers.</li>
+                    <li>Rev 1 ran on an Arduino Uno. Moved to a Raspberry Pi in rev 2 for faster image processing libraries.</li>
+                    <li>Wrote Python test scripts for IMU head tracking, the camera, and the display.</li>
+                </ul>
+                <div class="card-links">
+                    <a href="https://github.com/Matthew-Marsicano/Open-Source-XR-HMD" target="_blank" rel="noopener"><span class="icon i-github" aria-hidden="true"></span>Code</a>
+                </div>
+                <div class="project-figures">
+                    <a href="/media/xr_headset_side.webp"><img src="/media/xr_headset_side.webp" alt="Side view of the XR headset in use" width="957" height="719" loading="lazy"></a>
+                    <a href="/media/xr_headset_hardware.webp"><img src="/media/xr_headset_hardware.webp" alt="XR headset rev 1 hardware: Arduino Uno and battery pack on a goggle mount" width="719" height="957" loading="lazy"></a>
+                </div>
             </div>
-            <div class="project">
-                <img src="/media/ecg_project.jpg" alt="ecg">
-                <h2 style="margin: 0;padding: 0;">Circuits & Signals: Biomedical Applications</h2>
-                <h3 style="margin: 0;padding: 0;">ECG Sampling, Filtering, and Analysis</h3>
-                <h4 style="margin: 0;padding: 0;">September 2024 - December 2024</h4>
-                <p> • Designed active op-amp filters to collect ECG signals. <br>
-                    • Applied digital signal processing in MATLAB to assess waveform characteristics.</p>
+
+            <div class="project" id="spider">
+                <a href="/media/spider.webp"><img src="/media/spider.webp" alt="FPGA-controlled spider robot" width="530" height="800"></a>
+                <h2>Embedded Design</h2>
+                <h3>FPGA Controlled Spider Robot</h3>
+                <h4>September 2024 - December 2024</h4>
+                <ul class="bullets">
+                    <li>Programmed an Altera DE1-SoC in Quartus to generate PWM signals for servo control.</li>
+                    <li>Designed movement control logic in C++.</li>
+                </ul>
             </div>
+
+            <div class="project" id="ecg">
+                <a href="/media/ecg_project.webp"><img src="/media/ecg_project.webp" alt="ECG signal capture and filtering project" width="800" height="401"></a>
+                <h2>Circuits &amp; Signals: Biomedical Applications</h2>
+                <h3>ECG Sampling, Filtering, and Analysis</h3>
+                <h4>September 2024 - December 2024</h4>
+                <ul class="bullets">
+                    <li>Designed active op-amp filters to collect ECG signals.</li>
+                    <li>Applied digital signal processing in MATLAB to assess waveform characteristics.</li>
+                </ul>
+            </div>
+
         </div>
-    </div>
+    </main>
     <footer-component></footer-component>
 </body>
 </html>

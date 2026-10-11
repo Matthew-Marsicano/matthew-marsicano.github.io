@@ -3,26 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Resume</title>
-    <link rel="stylesheet" href="/../css/style.css">
-    <script src="/components/nav.js" type="text/javascript" defer></script>
-    <script src="/components/footer.js" type="text/javascript" defer></script>
-    <script src="https://kit.fontawesome.com/750d8f1e62.js" crossorigin="anonymous"></script>
+    <title>Resume | Matthew Marsicano</title>
+    <meta name="description" content="Resume of Matthew Marsicano, Electrical Engineering at Northeastern University, Class of 2027.">
+    <link rel="canonical" href="https://matthewmarsicano.com/resume/">
+    <meta name="theme-color" content="#06060f">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Matthew Marsicano">
+    <meta property="og:title" content="Resume | Matthew Marsicano">
+    <meta property="og:description" content="Electrical Engineering at Northeastern University, Class of 2027. Google, MediaTek, Draper, Nokia Bell Labs.">
+    <meta property="og:url" content="https://matthewmarsicano.com/resume/">
+    <meta property="og:image" content="https://matthewmarsicano.com/media/og-card.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header>
         <h1>Matthew's Resume</h1>
     </header>
     <nav-component></nav-component>
-    <div class="resume-container">
+    <main id="main" class="resume-container">
         <h2>My Current Resume</h2>
-        <p>Checkout Projects for exciting work outside the scope of my resume!</p>
-        <iframe src="../media/Matthew_Marsicano_Resume.pdf" class="resume-frame"></iframe>
-        <br>
-        <a href="media/Matthew_Marsicano_Resume.pdf" download class="download-link">Download My Resume (PDF)</a>
-    </div>
-
+        <p>Check out <a href="/projects/">Projects</a> for work outside the scope of my resume.</p>
+        <iframe src="/media/Matthew_Marsicano_Resume.pdf" class="resume-frame" title="Matthew Marsicano resume PDF"></iframe>
+        <div class="resume-actions">
+            <a href="/media/Matthew_Marsicano_Resume.pdf" download class="download-link"><span class="icon i-file" aria-hidden="true"></span> Download PDF</a>
+            <a href="/media/Matthew_Marsicano_Resume.pdf" target="_blank" rel="noopener" class="btn"><span class="icon i-external" aria-hidden="true"></span>Open in new tab</a>
+        </div>
+    </main>
     <footer-component></footer-component>
 </body>
 </html>
-

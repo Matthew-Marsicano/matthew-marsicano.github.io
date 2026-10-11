@@ -3,73 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Industry Experience</title>
-    <link rel="stylesheet" href="/../css/style.css">
-    <script src="/components/nav.js" type="text/javascript" defer></script>
-    <script src="/components/footer.js" type="text/javascript" defer></script>
-    <script src="https://kit.fontawesome.com/750d8f1e62.js" crossorigin="anonymous"></script>
+    <title>Industry Experience | Matthew Marsicano</title>
+    <meta name="description" content="Hardware internships: Google Pixel hardware, MediaTek WiFi 7 transceiver characterization, Draper GPS and ASIC test, Nokia Bell Labs backscatter radio, DEKA embedded firmware.">
+    <link rel="canonical" href="https://matthewmarsicano.com/experience/industry/">
+    <meta name="theme-color" content="#06060f">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Matthew Marsicano">
+    <meta property="og:title" content="Industry Experience | Matthew Marsicano">
+    <meta property="og:description" content="Google Pixel hardware, MediaTek WiFi 7 transceiver characterization, Draper, Nokia Bell Labs, and DEKA.">
+    <meta property="og:url" content="https://matthewmarsicano.com/experience/industry/">
+    <meta property="og:image" content="https://matthewmarsicano.com/media/og-card.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header>
         <h1>Matthew's Industry Experience</h1>
     </header>
     <nav-component></nav-component>
-    <div class="container">
+    <main id="main" class="container">
         <div class="projects-grid">
-            <div class="project">
-                <img src="/media/google_logo.svg" alt="Google">
-                <h2 style="margin: 0;padding: 0;">Google</h2>
-                <h3 style="margin: 0;padding: 0;">Hardware Engineer Intern, Pixel Phone Hardware</h3>
-                <h4 style="margin: 0;padding: 0;">May 2026 - August 2026 &middot; Chicago, IL</h4>
-                <p> • Characterized PCB Dk/Df and copper up to 20 GHz by DCR, TDR, and S-parameter measurements.
-                    <br>• Designed coupon structures to IEEE-370 with Delta L+3, Beatty resonators, and 2x-thru de-embedding.
-                    <br>• Automated MIPI RFFE compliance validation in PyVISA and SCPI, cutting time from 6 hours to 4 minutes.
-                    <br>• Defined two new validation cases for antenna tuner hubs, improving signal integrity and reducing coupling.
-                    <br>• Automated camera verification over temperature and validated SoC camera clock generation.
-                </p>
+
+            <div class="project" id="google">
+                <img src="/media/google_logo.svg" alt="Google" width="200" height="200">
+                <h2>Google</h2>
+                <h3>Hardware Engineer Intern, Pixel Phone Hardware</h3>
+                <h4>May 2026 - August 2026 &middot; Chicago, IL</h4>
+                <ul class="bullets">
+                    <li>Characterized PCB Dk/Df and copper up to 20 GHz by DCR, TDR, and S-parameter measurements.</li>
+                    <li>Designed coupon structures to IEEE-370 with Delta L+3, Beatty resonators, and 2x-thru de-embedding.</li>
+                    <li>Automated MIPI RFFE compliance validation in PyVISA and SCPI, cutting time from 6 hours to 4 minutes.</li>
+                    <li>Defined two new validation cases for antenna tuner hubs, improving signal integrity and reducing coupling.</li>
+                    <li>Automated camera verification over temperature and validated SoC camera clock generation.</li>
+                </ul>
             </div>
-            <div class="project">
-                <img src="/media/mediatek_logo.svg" alt="MediaTek">
-                <h2 style="margin: 0;padding: 0;">MediaTek</h2>
-                <h3 style="margin: 0;padding: 0;">Analog/Mixed-Signal IC Engineer Intern</h3>
-                <h4 style="margin: 0;padding: 0;">January 2026 - May 2026 &middot; Woburn, MA</h4>
-                <p> • Led characterization of a zero-IF WiFi 7 transceiver IC: DAC, ADC, front end, and SI performance.
-                    <br>• Optimized RX/TX test benches, saving 2 hours per chip validation and yielding 6 dB TX EVM improvement.
-                </p>
+
+            <div class="project" id="mediatek">
+                <img src="/media/mediatek_logo.svg" alt="MediaTek" width="200" height="200">
+                <h2>MediaTek</h2>
+                <h3>Analog/Mixed-Signal IC Engineer Intern</h3>
+                <h4>January 2026 - May 2026 &middot; Woburn, MA</h4>
+                <ul class="bullets">
+                    <li>Led characterization of a zero-IF WiFi 7 transceiver IC: DAC, ADC, front end, and SI performance.</li>
+                    <li>Optimized RX/TX test benches, saving 2 hours per chip validation and yielding 6 dB TX EVM improvement.</li>
+                </ul>
             </div>
-            <div class="project">
-                <img src="/media/draper_logo.png" alt="Draper">
-                <h2 style="margin: 0;padding: 0;">Draper</h2>
-                <h3 style="margin: 0;padding: 0;">Systems Engineering Intern</h3>
-                <h4 style="margin: 0;padding: 0;">May 2025 - August 2025 &middot; Cambridge, MA</h4>
-                <p> • Characterized an analog ASIC for bench-level power draw and performance across thermal cycling.
-                    <br>• Delivered hardware design and test documentation for a GPS receiver conducting satellite monitoring, supporting GPS III validation for the U.S. Space Force.
-                </p>
+
+            <div class="project" id="draper">
+                <img src="/media/draper_logo.webp" alt="Draper" width="1600" height="189" loading="lazy">
+                <h2>Draper</h2>
+                <h3>Systems Engineering Intern</h3>
+                <h4>May 2025 - August 2025 &middot; Cambridge, MA</h4>
+                <ul class="bullets">
+                    <li>Characterized an analog ASIC for bench-level power draw and performance across thermal cycling.</li>
+                    <li>Delivered hardware design and test documentation for a GPS receiver conducting satellite monitoring, supporting GPS III validation for the U.S. Space Force.</li>
+                </ul>
             </div>
-            <div class="project">
-                <img src="/media/bell_labs_logo.png" alt="Nokia Bell Labs">
-                <h2 style="margin: 0;padding: 0;">Nokia Bell Labs</h2>
-                <h3 style="margin: 0;padding: 0;">Backscatter Radio Engineer Co-op</h3>
-                <h4 style="margin: 0;padding: 0;">January 2025 - May 2025 &middot; Murray Hill, NJ</h4>
-                <p> • Designed 2 PCBs in Altium integrating RF, high-speed digital, and low-voltage power measurement.
-                    <br>• Automated PCB testbench, reducing bring-up time from 20 minutes to 2 minutes across 300+ devices.
-                    <br>• Cut FPGA power consumption by 15% through SystemVerilog revisions and synthesis settings.
-                    <br>• Assembled and programmed Xilinx-based RF transmitters for large-scale bistatic communication systems.
-                </p>
+
+            <div class="project" id="bell-labs">
+                <img src="/media/bell_labs_logo.webp" alt="Nokia Bell Labs" width="800" height="389" loading="lazy">
+                <h2>Nokia Bell Labs</h2>
+                <h3>Backscatter Radio Engineer Co-op</h3>
+                <h4>January 2025 - May 2025 &middot; Murray Hill, NJ</h4>
+                <ul class="bullets">
+                    <li>Designed 2 PCBs in Altium integrating RF, high-speed digital, and low-voltage power measurement.</li>
+                    <li>Automated PCB testbench, reducing bring-up time from 20 minutes to 2 minutes across 300+ devices.</li>
+                    <li>Cut FPGA power consumption by 15% through SystemVerilog revisions and synthesis settings.</li>
+                    <li>Assembled and programmed Xilinx-based RF transmitters for large-scale bistatic communication systems.</li>
+                </ul>
+                <div class="project-figures">
+                    <a href="/media/bell_labs_testbench.webp"><img src="/media/bell_labs_testbench.webp" alt="Tag verification testbench: RF switch board, Arduino Mega, and five tag programmer boards" width="957" height="719" loading="lazy"></a>
+                    <a href="/media/bell_labs_rf_fixture.webp"><img src="/media/bell_labs_rf_fixture.webp" alt="RF fixture with Mini-Circuits switch matrices, MXG signal generator, and MXA signal analyzer" width="957" height="719" loading="lazy"></a>
+                    <a href="/media/bell_labs_block_diagram.webp"><img src="/media/bell_labs_block_diagram.webp" alt="Testbed block diagram of a 16-way RF switch matrix for 15 tags" width="957" height="719" loading="lazy"></a>
+                    <a href="/media/bell_labs_tag.webp"><img src="/media/bell_labs_tag.webp" alt="Nokia backscatter tag board with enclosure, batteries, and antenna" width="957" height="719" loading="lazy"></a>
+                    <a href="/media/bell_labs_spectrum.webp"><img src="/media/bell_labs_spectrum.webp" alt="Tag spectrum near 900 MHz on an MXA signal analyzer" width="957" height="719" loading="lazy"></a>
+                    <a href="/media/bell_labs_tag_breakout.webp"><img src="/media/bell_labs_tag_breakout.webp" alt="Tag breakout PCB with power, SPI flash, and test headers" width="719" height="957" loading="lazy"></a>
+                </div>
             </div>
-            <div class="project">
-                <img src="/media/deka_logo.png" alt="DEKA">
-                <h2 style="margin: 0;padding: 0;"> DEKA Research and Development</h2>
-                <h3 style="margin: 0;padding: 0;">Embedded Software Engineer Intern</h3>
-                <h4 style="margin: 0;padding: 0;">May 2024 - August 2024 &middot; Manchester, NH</h4>
-                <p> • Architected C++ modem firmware for latency, fail-over, and security on the custom LTE modem onboard the Sentry security robot.<br>
-                    • Cut modem boot time 60% with multithreading and modifications to U-boot, Yocto, and kernel modules. <br>
-                    • Designed 5 API commands for real-time processor control and connection status displays,
-                    using multi-threading and object oriented design principles in C++. <br>
-                    • Automated network configuration and security protocols with Bash scripts.</p>
+
+            <div class="project" id="deka">
+                <img src="/media/deka_logo.webp" alt="DEKA" width="512" height="512" loading="lazy">
+                <h2>DEKA Research and Development</h2>
+                <h3>Embedded Software Engineer Intern</h3>
+                <h4>May 2024 - August 2024 &middot; Manchester, NH</h4>
+                <ul class="bullets">
+                    <li>Architected C++ modem firmware for latency, fail-over, and security on the custom LTE modem onboard the Sentry security robot.</li>
+                    <li>Cut modem boot time 60% with multithreading and modifications to U-Boot, Yocto, and kernel modules.</li>
+                    <li>Designed 5 API commands for real-time processor control and connection status displays, using multithreading and object-oriented design in C++.</li>
+                    <li>Automated network configuration and security protocols with Bash scripts.</li>
+                </ul>
+                <div class="project-figures">
+                    <a href="/media/sentrybot.webp"><img src="/media/sentrybot.webp" alt="DEKA Sentry security robot in Manchester Police livery" width="672" height="500" loading="lazy"></a>
+                </div>
             </div>
+
         </div>
-    </div>
+    </main>
     <footer-component></footer-component>
 </body>
 </html>

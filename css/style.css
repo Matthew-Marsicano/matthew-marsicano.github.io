@@ -104,10 +104,20 @@ header h1 {
 }
 
 /* ── Navigation ── */
-nav {
+/* The custom element is the sticky box. A sticky <nav> inside it could never
+   leave its own parent, so it never stuck. Min-height reserves space before JS runs. */
+nav-component {
+  display: block;
   position: sticky;
   top: 0;
   z-index: 100;
+  min-height: 58px;
+}
+
+footer-component { display: block; min-height: 130px; }
+
+nav {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,6 +145,11 @@ nav a:hover {
   color: #fff;
   background: rgba(255,255,255,0.09);
   text-decoration: none;
+}
+
+nav a[aria-current] {
+  color: #fff;
+  background: rgba(79,172,254,0.16);
 }
 
 /* ── Dropdowns ── */
@@ -180,7 +195,18 @@ nav a:hover {
   color: #4facfe;
 }
 
+/* Bridge the 10px gap so the menu stays open while the pointer crosses it */
+.dropdown-content::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
 .dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content,
 .dropdown-content:hover {
   display: block;
 }
@@ -329,10 +355,13 @@ nav a:hover {
   box-shadow: 0 4px 22px rgba(79,172,254,0.28);
 }
 
-.project-icon i {
+.project-icon .icon {
   font-size: 3rem;
   color: #fff;
 }
+
+.project h2, .project h3, .project h4 { margin: 0; }
+.project .bullets { margin-top: 1rem; text-align: left; }
 
 .projects-grid .project h2 { color: var(--text-primary); }
 .projects-grid .project h3 { color: var(--glow-blue); }
@@ -348,14 +377,27 @@ nav a:hover {
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  justify-items: center;
-  align-items: center;
+  columns: 3 240px;
+  column-gap: 1rem;
+  text-align: left;
+}
+
+.gallery figure {
+  margin: 0 0 1.25rem;
+  break-inside: avoid;
+}
+
+.gallery a { display: block; }
+
+.gallery figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--text-muted);
 }
 
 .gallery img {
+  display: block;
   width: 100%;
   height: auto;
   border: 1px solid rgba(255,255,255,0.09);
@@ -366,7 +408,7 @@ nav a:hover {
 }
 
 .gallery img:hover {
-  transform: scale(1.06);
+  transform: scale(1.03);
   border-color: rgba(79,172,254,0.38);
   box-shadow:
     0 0 24px rgba(79,172,254,0.22),
@@ -391,17 +433,26 @@ footer {
 
 .social-links { margin-top: 0.75rem; }
 
-.social-links i {
-  font-size: 28px;
+.social-links a {
+  display: inline-block;
   margin: 0 12px;
   color: rgba(255,255,255,0.55);
-  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
 }
 
-.social-links i:hover {
+.social-links .icon { font-size: 28px; }
+
+/* Glow goes on the link: a filter on the masked icon itself gets masked away */
+.social-links a:hover {
   color: var(--glow-blue);
   transform: scale(1.22);
-  text-shadow: 0 0 22px rgba(79,172,254,0.75);
+  filter: drop-shadow(0 0 10px rgba(79,172,254,0.75));
+}
+
+.footer-meta {
+  margin: 1rem 0 0;
+  font-size: 0.78rem;
+  color: var(--text-muted);
 }
 
 /* ── Resume ── */
@@ -461,7 +512,7 @@ footer {
   filter: brightness(1.08);
 }
 
-.blue-box h1 {
+.blue-box h2 {
   color: #fff;
   margin: 0;
   text-align: center;
@@ -672,7 +723,7 @@ footer {
   box-shadow: 0 4px 22px rgba(79,172,254,0.28);
 }
 
-.interest-icon i {
+.interest-icon .icon {
   font-size: 1.5rem;
   color: #fff;
 }
@@ -685,13 +736,13 @@ footer {
   letter-spacing: -0.01em;
 }
 
-.interest-list {
+.interest-list, .bullets {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.interest-list li {
+.interest-list li, .bullets li {
   position: relative;
   padding-left: 1.2rem;
   margin-bottom: 0.65rem;
@@ -700,7 +751,7 @@ footer {
   line-height: 1.55;
 }
 
-.interest-list li::before {
+.interest-list li::before, .bullets li::before {
   content: '';
   position: absolute;
   left: 0;
@@ -777,6 +828,8 @@ footer {
   gap: 1.2rem;
   transition: all 0.3s ease;
 }
+
+a.timeline-card { text-decoration: none; color: inherit; }
 
 .timeline-card:hover {
   background: var(--glass-bg-hover);
@@ -882,14 +935,10 @@ footer {
   transform: translateY(-3px);
 }
 
-.next-card i {
+.next-card .icon {
   font-size: 1.9rem;
   background: var(--gradient-accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   margin-bottom: 0.6rem;
-  display: inline-block;
 }
 
 .next-card h3 {
@@ -952,4 +1001,346 @@ footer {
     padding: 0.38rem 0.7rem;
     font-size: 0.8rem;
   }
+}
+
+/* ═══════════════════════════════════════════════════════
+   ICONS, BUTTONS, FEATURED WORK, ACCESSIBILITY
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Icons: Font Awesome Free SVGs (CC BY 4.0) used as masks, so they take
+   currentColor or any background. Replaces the render-blocking FA kit. ── */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  vertical-align: -0.125em;
+  background-color: currentColor;
+  -webkit-mask: var(--i) center / contain no-repeat;
+  mask: var(--i) center / contain no-repeat;
+}
+
+.i-apple        { --i: url(/media/icons/apple.svg); }
+.i-award        { --i: url(/media/icons/award.svg); }
+.i-bolt         { --i: url(/media/icons/bolt.svg); }
+.i-briefcase    { --i: url(/media/icons/briefcase.svg); }
+.i-code         { --i: url(/media/icons/code.svg); }
+.i-diagram      { --i: url(/media/icons/diagram-project.svg); }
+.i-envelope     { --i: url(/media/icons/envelope.svg); }
+.i-external     { --i: url(/media/icons/arrow-up-right-from-square.svg); }
+.i-file         { --i: url(/media/icons/file-arrow-down.svg); }
+.i-github       { --i: url(/media/icons/github.svg); }
+.i-grad         { --i: url(/media/icons/graduation-cap.svg); }
+.i-heart        { --i: url(/media/icons/heart-pulse.svg); }
+.i-linkedin     { --i: url(/media/icons/linkedin.svg); }
+.i-medal        { --i: url(/media/icons/medal.svg); }
+.i-memory       { --i: url(/media/icons/memory.svg); }
+.i-microchip    { --i: url(/media/icons/microchip.svg); }
+.i-rocket       { --i: url(/media/icons/rocket.svg); }
+.i-satellite    { --i: url(/media/icons/satellite-dish.svg); }
+.i-sliders      { --i: url(/media/icons/sliders.svg); }
+.i-tower        { --i: url(/media/icons/tower-broadcast.svg); }
+.i-vr           { --i: url(/media/icons/vr-cardboard.svg); }
+.i-wave         { --i: url(/media/icons/wave-square.svg); }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255,255,255,0.06);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(79,172,254,0.42);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--gradient-accent);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 4px 22px rgba(79,172,254,0.28);
+}
+
+.btn-primary:hover {
+  background: var(--gradient-accent);
+  box-shadow: 0 8px 32px rgba(79,172,254,0.45);
+}
+
+.hero-pitch {
+  margin: 0.75rem 0 0;
+  max-width: 60ch;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+
+/* ── Featured work ── */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 22px;
+  padding: 1.25rem 1.25rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  background: var(--glass-bg-hover);
+  border-color: rgba(79,172,254,0.32);
+  box-shadow: 0 0 32px rgba(79,172,254,0.10), 0 12px 40px rgba(0,0,0,0.25);
+  transform: translateY(-5px);
+}
+
+.feature-media {
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.feature-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature-media.is-icon {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(79,172,254,0.22), transparent 60%),
+    radial-gradient(circle at 80% 90%, rgba(124,58,237,0.22), transparent 60%),
+    rgba(255,255,255,0.03);
+}
+
+.feature-media.is-icon .icon {
+  font-size: 3.5rem;
+  background: var(--gradient-hero);
+}
+
+.feature-card h3 {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.feature-tag {
+  margin: 0.2rem 0 0.75rem;
+  color: var(--glow-blue);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.feature-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.feature-card .card-links { justify-content: flex-start; margin-top: auto; padding-top: 1rem; }
+
+/* ── Small link pills on cards ── */
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1.1rem;
+}
+
+.card-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(79,172,254,0.10);
+  border: 1px solid rgba(79,172,254,0.25);
+  color: var(--glow-blue);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card-links a:hover {
+  background: rgba(79,172,254,0.18);
+  color: #fff;
+}
+
+.card-links .icon { font-size: 0.85em; }
+
+.whats-next .hero-actions { justify-content: center; margin-top: 2rem; }
+
+.section-more {
+  text-align: center;
+  margin-top: 1.75rem;
+}
+
+/* ── Image figures inside project cards ── */
+.project-figures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.projects-grid .project-figures img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ── Resume ── */
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.resume-actions .download-link { margin-top: 0; }
+
+/* ── 404 ── */
+.not-found {
+  text-align: center;
+  max-width: 640px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.not-found .hero-actions { justify-content: center; }
+
+/* ── Accessibility ── */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0.75rem;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: var(--gradient-accent);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus { left: 1rem; }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--glow-blue);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+main { display: block; position: relative; z-index: 1; }
+
+@media (max-width: 700px) {
+  .hero-actions { justify-content: center; }
+  .feature-card .card-links { justify-content: center; }
+  .resume-frame { height: 70vh; }
+  nav-component { min-height: 86px; }
+  .hero { margin: 1.5rem 1rem 1rem; }
+
+  /* Animated orbs behind blurred glass force constant repaints. Skip on phones. */
+  body::before, body::after { animation: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ── Gallery sections ── */
+.gallery-section + .gallery-section { margin-top: 2.75rem; }
+
+.gallery-heading {
+  margin: 0 0 1rem;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.gallery-heading span {
+  margin-left: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* ── Homepage photo strip ── */
+.photo-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.photo-strip figure { margin: 0; }
+
+.photo-strip a {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+}
+
+.photo-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.photo-strip a:hover img { transform: scale(1.05); }
+
+.photo-strip figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
 }

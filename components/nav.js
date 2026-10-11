@@ -1,9 +1,7 @@
 class NavBar extends HTMLElement {
-  constructor() { super(); }
-
   connectedCallback() {
     this.innerHTML = `
-      <nav>
+      <nav aria-label="Main">
         <a href="/">Home</a>
         <a href="/resume/">Resume</a>
         <div class="dropdown">
@@ -26,6 +24,14 @@ class NavBar extends HTMLElement {
         <a href="/gallery/">Gallery</a>
       </nav>
     `;
+
+    // Mark the current page, and its parent section for dropdown pages
+    const path = location.pathname.replace(/index\.html$/, '');
+    this.querySelectorAll('a').forEach(a => {
+      const href = a.getAttribute('href');
+      if (href === path) a.setAttribute('aria-current', 'page');
+      else if (a.classList.contains('dropbtn') && path.startsWith(href)) a.setAttribute('aria-current', 'true');
+    });
   }
 }
 
