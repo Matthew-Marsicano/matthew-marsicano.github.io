@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matthew Marsicano | Electrical Engineer, RF and Mixed-Signal</title>
-    <meta name="description" content="Northeastern Electrical Engineering student. RF, mixed-signal, and silicon design. Internships at Google, MediaTek, Draper, and Nokia Bell Labs. SKY130 chip projects.">
+    <title>Matthew Marsicano | Silicon Engineering, New Grad 2027</title>
+    <meta name="description" content="Northeastern Electrical Engineering, 4th year. Seeking May 2027 new grad roles in Silicon Engineering. Internships at Google, MediaTek, Draper, Nokia Bell Labs, and DEKA.">
     <link rel="canonical" href="https://matthewmarsicano.com/">
     <meta name="theme-color" content="#06060f">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Matthew Marsicano">
-    <meta property="og:title" content="Matthew Marsicano | Electrical Engineer, RF and Mixed-Signal">
-    <meta property="og:description" content="Northeastern Electrical Engineering student. RF, mixed-signal, and silicon design. Internships at Google, MediaTek, Draper, and Nokia Bell Labs.">
+    <meta property="og:title" content="Matthew Marsicano | Silicon Engineering, New Grad 2027">
+    <meta property="og:description" content="Northeastern EE, 4th year. Seeking May 2027 new grad roles in Silicon Engineering. Google, MediaTek, Draper, Nokia Bell Labs.">
     <meta property="og:url" content="https://matthewmarsicano.com/">
     <meta property="og:image" content="https://matthewmarsicano.com/media/og-card.jpg">
     <meta property="og:image:width" content="1200">
@@ -23,6 +23,7 @@
     <script src="/components/nav.js" defer></script>
     <script src="/components/footer.js" defer></script>
     <script src="/components/fx.js" defer></script>
+    <script src="/components/chip.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -33,7 +34,7 @@
         "email": "mailto:portfolio@matthewmarsicano.com",
         "jobTitle": "Electrical Engineering Student",
         "alumniOf": { "@type": "CollegeOrUniversity", "name": "Northeastern University" },
-        "knowsAbout": ["Analog and mixed-signal IC design", "RF systems", "PCB design", "Backscatter communication", "SKY130"],
+        "knowsAbout": ["Post-silicon validation", "Analog and mixed-signal IC design", "RF systems", "PCB design", "Backscatter communication", "SKY130"],
         "sameAs": [
             "https://www.linkedin.com/in/matthewmarsicano",
             "https://github.com/Matthew-Marsicano"
@@ -41,28 +42,33 @@
     }
     </script>
 </head>
-<body>
+<body class="home">
     <a class="skip-link" href="#main">Skip to content</a>
-    <header>
-        <h1>Matthew Marsicano's Portfolio</h1>
-    </header>
 
     <nav-component></nav-component>
 
-    <main id="main">
+    <main id="main" class="home-main">
 
-    <!-- ── Hero ── -->
-    <section class="hero">
-        <span class="hero-photo">
-            <img src="/media/Headshot.webp" alt="Matthew Marsicano" class="hero-headshot" width="533" height="800" fetchpriority="high">
-        </span>
-        <div class="hero-text">
-            <h2>Hello, I'm Matthew</h2>
-            <p class="hero-subtitle">Electrical Engineering @ Northeastern University · Class of 2027</p>
-            <p class="hero-meta">3.95 GPA · Silicon Engineering · PCB Design · RF and Mixed-Signal Systems</p>
-            <p class="hero-pitch">I build and test RF and mixed-signal hardware. PCB and silicon validation at Google, MediaTek, Draper, and Nokia Bell Labs, plus my own SKY130 chip designs.</p>
+    <!-- ── Intro: photo + blurb ── -->
+    <section class="intro" aria-label="About">
+        <div class="intro-photo">
+            <span class="hero-photo">
+                <img src="/media/Headshot.webp" alt="Matthew Marsicano" class="hero-headshot" width="533" height="800" fetchpriority="high">
+            </span>
+        </div>
+        <div class="intro-blurb">
+            <p class="intro-kicker"><span class="status-dot" aria-hidden="true"></span>Open to new grad roles &middot; May 2027</p>
+            <h1>Matthew Marsicano</h1>
+            <p class="intro-lede">4th-year Electrical Engineering at Northeastern University. Seeking May 2027 new grad roles in <strong>Silicon Engineering</strong>.</p>
+            <p class="intro-body">Post-silicon validation of a Wi-Fi 7 transceiver at MediaTek. Clocking and SI at Google. Backscatter radio hardware at Nokia Bell Labs. Founder of Forge Silicon Design, Northeastern's first chip design club.</p>
+            <ul class="intro-tags">
+                <li>3.95 GPA</li>
+                <li>Apple Next-gen Innovator</li>
+                <li>Amazon Edge Scholar</li>
+                <li>Silevitch Scholar</li>
+            </ul>
             <div class="hero-actions">
-                <a class="btn btn-primary" href="/resume/"><span class="icon i-file" aria-hidden="true"></span>Resume</a>
+                <a class="btn btn-primary" href="/media/Matthew_Marsicano_Resume.pdf" download><span class="icon i-file" aria-hidden="true"></span>Resume</a>
                 <a class="btn" href="mailto:portfolio@matthewmarsicano.com"><span class="icon i-envelope" aria-hidden="true"></span>Email</a>
                 <a class="btn" href="https://www.linkedin.com/in/matthewmarsicano" target="_blank" rel="noopener"><span class="icon i-linkedin" aria-hidden="true"></span>LinkedIn</a>
                 <a class="btn" href="https://github.com/Matthew-Marsicano" target="_blank" rel="noopener"><span class="icon i-github" aria-hidden="true"></span>GitHub</a>
@@ -70,252 +76,138 @@
         </div>
     </section>
 
-    <!-- ── Featured Projects ── -->
-    <section class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">Recent work outside my internships</p>
+    <!-- ── Internship timeline, wired into the chip below ── -->
+    <section class="board" aria-label="Internships and site map">
 
-        <div class="feature-grid">
-
-            <article class="feature-card">
-                <div class="feature-media is-icon"><span class="icon i-memory" aria-hidden="true"></span></div>
-                <h3>FlashNPU</h3>
-                <p class="feature-tag">Inference accelerator RTL</p>
-                <p>Runs neural network layers straight out of flash with no DRAM. 32-lane INT4 x INT8 GEMV engine fed by 4 striped flash channels. Bit-exact against a Python golden model.</p>
-                <div class="card-links">
-                    <a href="/projects/silicon/#flashnpu">Details</a>
-                </div>
-            </article>
-
-            <article class="feature-card">
-                <div class="feature-media"><img src="/media/sar_adc_model.webp" srcset="/media/sar_adc_model-480.webp 480w, /media/sar_adc_model.webp 960w" sizes="(max-width: 700px) 92vw, 260px" alt="SAR ADC model output spectrum showing 49.3 dB SNDR and 7.90 ENOB" width="960" height="1080" loading="lazy" decoding="async" style="object-position: top;"></div>
-                <h3>8-bit SAR ADC</h3>
-                <p class="feature-tag">SKY130 · TinyTapeout analog</p>
-                <p>Differential 8-bit, 1 MS/s SAR with a monotonic-switching cap DAC. Golden model hits 7.9 ENOB. Bootstrapped sampling switch reaches 78 dB SFDR.</p>
-                <div class="card-links">
-                    <a href="/projects/silicon/#sar-adc">Details</a>
-                </div>
-            </article>
-
-            <article class="feature-card">
-                <div class="feature-media is-icon"><span class="icon i-tower" aria-hidden="true"></span></div>
-                <h3>BLE Backscatter Modem</h3>
-                <p class="feature-tag">SKY130 · TinyTapeout digital</p>
-                <p>Baseband and RF switch controller for a BLE backscatter tag. Full P&amp;R at 64 MHz with +3.08 ns slack and 0 DRC/LVS errors.</p>
-                <div class="card-links">
-                    <a href="/projects/silicon/#ble-modem">Details</a>
-                    <a href="https://github.com/Matthew-Marsicano/Backscatter_RF_Switch_Driver" target="_blank" rel="noopener"><span class="icon i-github" aria-hidden="true"></span>Code</a>
-                </div>
-            </article>
-
-            <article class="feature-card">
-                <div class="feature-media is-icon"><span class="icon i-sliders" aria-hidden="true"></span></div>
-                <h3>Backscatter Designer</h3>
-                <p class="feature-tag">Interactive tool</p>
-                <p>Link budget, Smith chart load states, image rejection, sideband spectrum, and bistatic coverage for an N-phase backscatter tag. Runs in the browser.</p>
-                <div class="card-links">
-                    <a href="/backscatter-radio-viz/" target="_blank" rel="noopener"><span class="icon i-external" aria-hidden="true"></span>Try it</a>
-                    <a href="https://github.com/Matthew-Marsicano/backscatter-radio-viz" target="_blank" rel="noopener"><span class="icon i-github" aria-hidden="true"></span>Code</a>
-                </div>
-            </article>
-
-        </div>
-
-        <div class="section-more">
-            <a class="btn" href="/projects/">All projects</a>
-        </div>
-    </section>
-
-    <!-- ── From the Lab ── -->
-    <section class="container">
-        <h2 class="section-title">From the Lab</h2>
-        <p class="section-subtitle">Hardware I've built and tested</p>
-
-        <div class="photo-strip">
-            <figure>
-                <a href="/experience/industry/#bell-labs"><img src="/media/bell_labs_testbench.webp" srcset="/media/bell_labs_testbench-480.webp 480w, /media/bell_labs_testbench.webp 957w" sizes="(max-width: 700px) 92vw, 280px" alt="Nokia Bell Labs tag verification testbench" width="957" height="719" loading="lazy" decoding="async"></a>
-                <figcaption>Tag verification testbench, Nokia Bell Labs</figcaption>
-            </figure>
-            <figure>
-                <a href="/projects/hardware/#generate"><img src="/media/gce_control_pcb.webp" srcset="/media/gce_control_pcb-480.webp 480w, /media/gce_control_pcb.webp 719w" sizes="(max-width: 700px) 92vw, 280px" alt="GCE Control PCB V1.0, assembled" width="719" height="957" loading="lazy" decoding="async"></a>
-                <figcaption>Filter machine control board, Generate</figcaption>
-            </figure>
-            <figure>
-                <a href="/projects/hardware/#tubender"><img src="/media/tubender_rev1.webp" srcset="/media/tubender_rev1-480.webp 480w, /media/tubender_rev1.webp 957w" sizes="(max-width: 700px) 92vw, 280px" alt="Assembled Tubender Rev 1.0 main board" width="957" height="719" loading="lazy" decoding="async"></a>
-                <figcaption>Tubender Rev 1.0 main board, Generate</figcaption>
-            </figure>
-            <figure>
-                <a href="/projects/classwork/#xr-hmd"><img src="/media/xr_headset_side.webp" srcset="/media/xr_headset_side-480.webp 480w, /media/xr_headset_side.webp 957w" sizes="(max-width: 700px) 92vw, 280px" alt="Open-source XR headset in use" width="957" height="719" loading="lazy" decoding="async"></a>
-                <figcaption>Open-source XR headset, Networked XR</figcaption>
-            </figure>
-        </div>
-
-        <div class="section-more">
-            <a class="btn" href="/gallery/">Full gallery</a>
-        </div>
-    </section>
-
-    <!-- ── Areas of Interest ── -->
-    <section class="container">
-        <h2 class="section-title">Areas of Interest</h2>
-        <p class="section-subtitle">Roles I'm targeting for my engineering career</p>
-
-        <div class="interest-grid">
-
-            <div class="interest-card">
-                <div class="interest-icon"><span class="icon i-microchip" aria-hidden="true"></span></div>
-                <h3>Analog / Mixed-Signal IC Design</h3>
-                <ul class="interest-list">
-                    <li>Led zero-IF WiFi 7 transceiver characterization at MediaTek: DAC, ADC, front end, SI</li>
-                    <li>8-bit SKY130 SAR ADC and 40-100 MHz PLL with custom schematic and layout</li>
-                    <li>FlashNPU: flash-streaming inference accelerator RTL</li>
-                </ul>
-            </div>
-
-            <div class="interest-card">
-                <div class="interest-icon"><span class="icon i-rocket" aria-hidden="true"></span></div>
-                <h3>Product Development</h3>
-                <ul class="interest-list">
-                    <li>Generate Product Development Studio: Principal Electrical Engineer, leading 100+ engineers across 8 client projects</li>
-                    <li>Own trade-offs in RF TX, power, and robotic actuators</li>
-                    <li>Founder &amp; Director of Forge Silicon Design, Northeastern's first chip design student org</li>
-                </ul>
-            </div>
-
-            <div class="interest-card">
-                <div class="interest-icon"><span class="icon i-satellite" aria-hidden="true"></span></div>
-                <h3>Wireless &amp; RF Systems</h3>
-                <ul class="interest-list">
-                    <li>MIPI RFFE compliance automation and 20 GHz PCB material characterization at Google</li>
-                    <li>GPS receiver validation for Space Force handoff (Draper)</li>
-                    <li>Backscatter PCB testbench across 300+ devices at Nokia Bell Labs</li>
-                    <li>BLE backscatter modem TinyTapeout tile and BEACON backscatter wearable capstone</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ── Work Experience Timeline ── -->
-    <section class="container">
-        <h2 class="section-title">Work Experience</h2>
-        <p class="section-subtitle">Most recent first</p>
-
-        <div class="timeline">
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-period">Summer 2026</div>
-                <a class="timeline-card" href="/experience/industry/#google">
-                    <img src="/media/google_logo.svg" alt="Google" class="timeline-logo" width="52" height="52" loading="lazy">
-                    <div class="timeline-content">
-                        <h3>Google</h3>
-                        <p>Hardware Engineer Intern, Pixel Phone Hardware &middot; Chicago, IL</p>
-                    </div>
+        <h2 class="board-label">Internships <span>click a logo</span></h2>
+        <ol class="htl">
+            <li class="htl-node">
+                <a href="/experience/deka/" aria-label="DEKA Research and Development, Summer 2024">
+                    <span class="htl-logo"><img src="/media/deka_logo.webp" alt="" width="512" height="512"></span>
+                    <span class="htl-name">DEKA</span>
+                    <span class="htl-date">Summer 2024</span>
                 </a>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-period">Spring 2026</div>
-                <a class="timeline-card" href="/experience/industry/#mediatek">
-                    <img src="/media/mediatek_logo.svg" alt="MediaTek" class="timeline-logo" width="52" height="52" loading="lazy">
-                    <div class="timeline-content">
-                        <h3>MediaTek</h3>
-                        <p>Analog/Mixed-Signal IC Engineer Intern &middot; Woburn, MA</p>
-                    </div>
+            </li>
+            <li class="htl-node">
+                <a href="/experience/bell-labs/" aria-label="Nokia Bell Labs, Spring 2025">
+                    <span class="htl-logo"><img src="/media/bell_labs_logo-480.webp" alt="" width="480" height="233"></span>
+                    <span class="htl-name">Nokia Bell Labs</span>
+                    <span class="htl-date">Spring 2025</span>
                 </a>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-period">Summer 2025</div>
-                <a class="timeline-card" href="/experience/industry/#draper">
-                    <img src="/media/draper_logo.webp" srcset="/media/draper_logo-480.webp 480w, /media/draper_logo.webp 1600w" sizes="52px" alt="Draper" class="timeline-logo" width="52" height="52" loading="lazy">
-                    <div class="timeline-content">
-                        <h3>Draper</h3>
-                        <p>Systems Engineering Intern &middot; Cambridge, MA</p>
-                    </div>
+            </li>
+            <li class="htl-node">
+                <a href="/experience/draper/" aria-label="Draper, Summer 2025">
+                    <span class="htl-logo"><img src="/media/draper_logo-480.webp" alt="" width="480" height="57"></span>
+                    <span class="htl-name">Draper</span>
+                    <span class="htl-date">Summer 2025</span>
                 </a>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-period">Spring 2025</div>
-                <a class="timeline-card" href="/experience/industry/#bell-labs">
-                    <img src="/media/bell_labs_logo.webp" srcset="/media/bell_labs_logo-480.webp 480w, /media/bell_labs_logo.webp 800w" sizes="52px" alt="Nokia Bell Labs" class="timeline-logo" width="52" height="52" loading="lazy">
-                    <div class="timeline-content">
-                        <h3>Nokia Bell Labs</h3>
-                        <p>Backscatter Radio Engineer Co-op &middot; Murray Hill, NJ</p>
-                    </div>
+            </li>
+            <li class="htl-node">
+                <a href="/experience/mediatek/" aria-label="MediaTek, Spring 2026">
+                    <span class="htl-logo"><img src="/media/mediatek_logo.svg" alt="" width="1024" height="268"></span>
+                    <span class="htl-name">MediaTek</span>
+                    <span class="htl-date">Spring 2026</span>
                 </a>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-period">Summer 2024</div>
-                <a class="timeline-card" href="/experience/industry/#deka">
-                    <img src="/media/deka_logo.webp" alt="DEKA R&amp;D" class="timeline-logo" width="52" height="52" loading="lazy">
-                    <div class="timeline-content">
-                        <h3>DEKA R&amp;D</h3>
-                        <p>Embedded Software Engineering Intern &middot; Manchester, NH</p>
-                    </div>
+            </li>
+            <li class="htl-node">
+                <a href="/experience/google/" aria-label="Google, Summer 2026">
+                    <span class="htl-logo"><img src="/media/google_logo.svg" alt="" width="24" height="24"></span>
+                    <span class="htl-name">Google</span>
+                    <span class="htl-date">Summer 2026</span>
                 </a>
-            </div>
+            </li>
+            <li class="htl-node is-next">
+                <a href="mailto:portfolio@matthewmarsicano.com" aria-label="Next: full-time from May 2027. Email me.">
+                    <span class="htl-logo"><span class="htl-q">?</span></span>
+                    <span class="htl-name">Your team</span>
+                    <span class="htl-date">May 2027</span>
+                </a>
+            </li>
+        </ol>
 
+        <!-- Bus traces from each timeline node down to the package pins -->
+        <div class="bus" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
-    </section>
 
-    <!-- ── Honors & Recognition ── -->
-    <section class="container">
-        <h2 class="section-title">Honors &amp; Recognition</h2>
-        <p class="section-subtitle">Selected for competitive industry and university programs</p>
+        <!-- ── The chip: every block is a page ── -->
+        <div class="chip">
+            <div class="pins pins-t" aria-hidden="true"></div>
+            <div class="pins pins-b" aria-hidden="true"></div>
+            <div class="pins pins-l" aria-hidden="true"></div>
+            <div class="pins pins-r" aria-hidden="true"></div>
 
-        <div class="next-grid">
-            <div class="next-card">
-                <span class="icon i-apple" aria-hidden="true"></span>
-                <h3>Apple Next-Gen Innovators Mentee</h3>
-                <p>1 of 10 Northeastern students selected for Apple's Hardware Engineering mentorship program &middot; Sep 2025 &ndash; May 2026</p>
-            </div>
-            <div class="next-card">
-                <span class="icon i-award" aria-hidden="true"></span>
-                <h3>Amazon Edge Technology Scholarship</h3>
-                <p>1 of 3 students selected for the scholarship &middot; October 2025</p>
-            </div>
-            <div class="next-card">
-                <span class="icon i-medal" aria-hidden="true"></span>
-                <h3>Silevitch Engineering Leadership Scholarship</h3>
-                <p>Northeastern University &middot; April 2026</p>
-            </div>
-            <div class="next-card">
-                <span class="icon i-microchip" aria-hidden="true"></span>
-                <h3>MIT iQuHack 2024</h3>
-                <p>2nd place, QuEra Challenge: Maximal Independent Set on QuEra's Aquila neutral-atom quantum computer</p>
-            </div>
-        </div>
-    </section>
+            <div class="pkg">
+                <span class="pkg-mark pkg-mark-tl" aria-hidden="true">MM-2027 &middot; NEU</span>
+                <span class="pkg-mark pkg-mark-br" aria-hidden="true">SKY130 &middot; REV A</span>
+                <span class="pin1" aria-hidden="true"></span>
 
-    <!-- ── What's Next ── -->
-    <section class="container">
-        <div class="whats-next">
-            <h2>What's Next?</h2>
-            <p class="whats-next-tagline">Looking ahead to the next chapter</p>
-            <div class="next-grid">
-                <div class="next-card">
-                    <span class="icon i-grad" aria-hidden="true"></span>
-                    <h3>EE Masters Programs</h3>
-                    <p>Applying Fall 2026</p>
+                <div class="die" role="navigation" aria-label="Site map">
+                    <a class="blk blk-sil tex-cells" href="/projects/silicon/" style="--i:0" data-probe="FlashNPU, 8-bit SAR ADC, BLE backscatter modem, PLL, 16-QAM modulator">
+                        <span class="blk-ref">U1 &middot; CORE</span>
+                        <span class="blk-title"><span class="icon i-microchip" aria-hidden="true"></span>Silicon</span>
+                        <span class="blk-desc">FlashNPU, SAR ADC, BLE modem, PLL</span>
+                    </a>
+                    <a class="blk blk-hw tex-vias" href="/projects/hardware/" style="--i:1" data-probe="BEACON wearable, Generate client boards, Forge, pneumatic gripper, buck converter">
+                        <span class="blk-ref">U2 &middot; PCB</span>
+                        <span class="blk-title"><span class="icon i-bolt" aria-hidden="true"></span>Hardware</span>
+                        <span class="blk-desc">BEACON, Generate, Forge</span>
+                    </a>
+                    <a class="blk blk-rf tex-analog" href="/backscatter-radio-viz/" style="--i:2" data-probe="Interactive backscatter link budget, Smith chart, and sideband tool">
+                        <span class="blk-ref">U3 &middot; RF</span>
+                        <span class="blk-title"><span class="icon i-tower" aria-hidden="true"></span>RF Tool</span>
+                        <span class="blk-desc">Backscatter Designer</span>
+                    </a>
+                    <a class="blk blk-ind tex-sram" href="/experience/industry/" style="--i:3" data-probe="Google, MediaTek, Draper, Nokia Bell Labs, DEKA">
+                        <span class="blk-ref">U4 &middot; MEM</span>
+                        <span class="blk-title"><span class="icon i-briefcase" aria-hidden="true"></span>Industry</span>
+                        <span class="blk-desc">All internships</span>
+                    </a>
+
+                    <div class="blk blk-res" style="--i:4">
+                        <a class="blk-cover" href="/media/Matthew_Marsicano_Resume.pdf" download data-probe="Download resume (PDF, 96 KB)" aria-label="Download resume PDF"></a>
+                        <span class="blk-ref">U0 &middot; RESUME</span>
+                        <span class="res-icon"><span class="icon i-file" aria-hidden="true"></span></span>
+                        <span class="blk-title">Download Resume</span>
+                        <span class="blk-desc">PDF &middot; New Grad 2027</span>
+                        <a class="res-view" href="/resume/" data-probe="View resume in the browser">View online</a>
+                    </div>
+
+                    <a class="blk blk-sw tex-cells" href="/projects/software/" style="--i:5" data-probe="Backscatter Designer, MIT iQuHack, this website">
+                        <span class="blk-ref">U5 &middot; CPU</span>
+                        <span class="blk-title"><span class="icon i-code" aria-hidden="true"></span>Software</span>
+                        <span class="blk-desc">Tools and code</span>
+                    </a>
+                    <a class="blk blk-cls tex-analog" href="/projects/classwork/" style="--i:6" data-probe="Networked XR headset, Embedded Design, biomedical ECG">
+                        <span class="blk-ref">U6 &middot; DSP</span>
+                        <span class="blk-title"><span class="icon i-grad" aria-hidden="true"></span>Classwork</span>
+                        <span class="blk-desc">XR, embedded, ECG</span>
+                    </a>
+                    <a class="blk blk-gal tex-vias" href="/gallery/" style="--i:7" data-probe="Lab and board photos">
+                        <span class="blk-ref">U7 &middot; ISP</span>
+                        <span class="blk-title"><span class="icon i-diagram" aria-hidden="true"></span>Gallery</span>
+                        <span class="blk-desc">Lab photos</span>
+                    </a>
+                    <a class="blk blk-rsch tex-sram" href="/experience/research/" style="--i:8" data-probe="RISE Expo, DELTA Lab, Sigma Xi">
+                        <span class="blk-ref">U8 &middot; NPU</span>
+                        <span class="blk-title"><span class="icon i-wave" aria-hidden="true"></span>Research</span>
+                        <span class="blk-desc">RISE, DELTA Lab</span>
+                    </a>
+                    <a class="blk blk-cert tex-cells" href="/certifications/" style="--i:9" data-probe="Cadence Semi 101, Verilog for FPGA, Altium PCB, iQuHack">
+                        <span class="blk-ref">U9 &middot; OTP</span>
+                        <span class="blk-title"><span class="icon i-award" aria-hidden="true"></span>Certifications</span>
+                        <span class="blk-desc">Cadence, Altium, Verilog</span>
+                    </a>
+                    <a class="blk blk-io tex-pads" href="mailto:portfolio@matthewmarsicano.com" style="--i:10" data-probe="portfolio@matthewmarsicano.com">
+                        <span class="blk-ref">IO &middot; PADS</span>
+                        <span class="blk-title"><span class="icon i-envelope" aria-hidden="true"></span>Contact</span>
+                        <span class="blk-desc">Email me</span>
+                    </a>
                 </div>
-                <div class="next-card">
-                    <span class="icon i-briefcase" aria-hidden="true"></span>
-                    <h3>Full-Time Engineering</h3>
-                    <p>Seeking opportunities</p>
-                </div>
-            </div>
-            <div class="hero-actions">
-                <a class="btn btn-primary" href="mailto:portfolio@matthewmarsicano.com"><span class="icon i-envelope" aria-hidden="true"></span>Get in touch</a>
             </div>
         </div>
+
+        <p class="probe" aria-live="polite"><span class="probe-tag">PROBE</span><span class="probe-text">Hover a block to probe it. Click to open.</span></p>
     </section>
 
     </main>
