@@ -2228,3 +2228,21 @@ main { view-transition-name: page-main; }
   .xp-pager { grid-template-columns: 1fr; }
   .xp-pager .is-next-link { grid-column: auto; }
 }
+
+/* ── Industry list and experience overview links ── */
+.timeline-content h2 {
+  margin: 0 0 0.18rem;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.timeline-content .timeline-sum {
+  margin-top: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.projects-grid .project h2 a { color: inherit; text-decoration: none; }
+.projects-grid .project h2 a:hover { color: var(--glow-blue); }
